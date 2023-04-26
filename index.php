@@ -33,16 +33,13 @@
 				} );
 		</script>
 		<style>
-			.registro{
-			
-			
-			}
+
 		</style>
 		
 	</head>
 	<body>
-		<a href="login.php" class='btn btn-primary registro'>Iniciar sesión</a>
-		<a href="registrar.php" class='btn btn-primary registro'>Registrar</a>
+		<a href="login.php" class='btn btn-primary '>Iniciar sesión</a>
+		<a href="registrar.php" class='btn btn-primary '>Registrar</a>
 		<div class="container">
 			<h1>Bienvenido a la libreria cosmere</h1>
 			<br>
