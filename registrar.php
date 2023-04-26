@@ -7,7 +7,7 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		
-		<title>Club Deportivo La Venta</title>
+		<title>Formulario de registro Cosmere</title>
 		<style>
 			.form-control{
 				width:850px ;
@@ -27,7 +27,7 @@
                         <!-- usuario -->
 						<div class="form-group">
 							<label>Nombre de usuario: 
-							<input type="text" name="nombre" class="form-control">
+							<input type="text" name="usuario" class="form-control" required>
 							</label>
 						</div>
                         <!-- Contraseña -->
@@ -35,7 +35,7 @@
 
 						<div class="form-group">
 							<label>Contraseña: 
-							<input type="password" name="contra" class="form-control">
+							<input type="password" name="contra" class="form-control" required>
 							</label>
 						</div>
 
@@ -43,21 +43,21 @@
                         <!-- Correo -->
                         <div class="form-group">
                         <label>Correo electrónico: 
-                            <input type="mail" name="correo" class="form-control">
+                            <input type="mail" name="correo" class="form-control" required>
                             </label>
                         </div>
 
                         <!-- Telefono -->
 						<div class="form-group">
 						<label>Teléfono: 
-							<input type="number" name="telefono" maxlength="9" class="form-control">
+							<input type="number" name="telefono" maxlength="9" class="form-control" required>
 							</label>
 						</div>
 
                         <!-- Dirección -->
 						<div class="form-group">
 						<label>Dirección: 
-							<input type="text" name="direccion" class="form-control" placeholder="Calle ...">
+							<input type="text" name="direccion" class="form-control" placeholder="Calle ..." required>
 							</label>
 						</div>
 						

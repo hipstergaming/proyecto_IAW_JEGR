@@ -33,10 +33,7 @@
 				} );
 		</script>
 		<style>
-			.registro{
 			
-			
-			}
 		</style>
 		
 	</head>
