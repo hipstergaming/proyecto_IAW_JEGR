@@ -17,6 +17,7 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/jquery.dataTables.min.css">
+
 		
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -31,21 +32,23 @@
 				$('#tabla').DataTable();
 				} );
 		</script>
-		
+		<style>
+			.registro{
+			
+			
+			}
+		</style>
 		
 	</head>
 	<body>
-		
+		<a href="login.php" class='btn btn-primary registro'>Iniciar sesión</a>
+		<a href="registrar.php" class='btn btn-primary registro'>Registrar</a>
 		<div class="container">
-			<a href="registrar.php" class='btn btn-primary'>Registrar</a>
 			<h1>Bienvenido a la libreria cosmere</h1>
 			<br>
-			<div class="row">
-				</div>
-				<br>
-				
+
 				<div class="row">
-					<h2>Lista de libros:</h2>
+					<h2>Lista de libros a la venta:</h2>
 				</div>
 			<br>
 			<br>
