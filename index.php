@@ -4,9 +4,9 @@
 
 	$sqljoin= "Select * from autores,libros, editorial where libros.id_autor=autores.id_autor and libros.id_editorial=editorial.id_editorial";
 	$todo= $mysqli->query($sqljoin);
-	session_start();
-
+	
 	if(isset($_SESSION["usuario"])){
+		session_start();
 	$idusu=$_SESSION["id"];
 	$datosse="Select * from usuarios where id like $idusu";
 	}
