@@ -8,7 +8,7 @@ session_start();
 
 if (isset($_SESSION['usuario'])) {
 	$idusu = $_SESSION["id_usu"];
-	$datosse = "Select * from usuarios where id like $idusu";
+
 }
 ?>
 
@@ -38,9 +38,6 @@ if (isset($_SESSION['usuario'])) {
 			$('#tabla').DataTable();
 		});
 	</script>
-
-	<style>
-	</style>
 
 </head>
 
