@@ -35,10 +35,11 @@ while($fila = $resultado->fetch_assoc()){
     // $sql= "update base set nombre = '$nombre', correo = '$email', fecha = '$fecha', premium = '$premium' where id = '$id'";
     $sql2 = "update compras set id_usuario= '$id_usu' id_libro = '$id_libro' cantidad_comprada= '$cantidad'";
     $resultado2 = $mysqli->query($sql2);
+    
     $sql3= "update libros set cantidad_dis = '$calc_cant' where id_libro = '$id_libro'";
     $resultado3= $mysqli->query($sql3);
 
-    
+
     ?>
     <br>
     <p class="alert alert-primary" role="alert">REGISTRO MODIFICADO</p>

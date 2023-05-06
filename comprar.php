@@ -1,7 +1,7 @@
 <?php
 //    Variables
 	$id_libro=$_GET['id_libro'];
-	$idu_su=$_GET['id_usu'];
+	$id_usu=$_GET['id_usu'];
 
 
     //Establezco conexion
