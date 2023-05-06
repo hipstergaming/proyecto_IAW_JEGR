@@ -7,7 +7,7 @@
     //Establezco conexion
     require 'conexion.php';
     // &contra=a
-	$sql= "Select * from libros where id_libro=$id";
+	$sql= "Select * from libros where id_libro=$id_libro";
 	$resultado= $mysqli->query($sql);
 	
 ?>
