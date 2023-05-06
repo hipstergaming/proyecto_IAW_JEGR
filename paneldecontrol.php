@@ -14,6 +14,10 @@ if(isset($_SESSION)){
 }else{
     echo "Error, no estas logueado";
 }
+
+
+echo "<br>";
+echo '<a href="index.php">Volver a inicio</a>';
 echo "<br>";
 echo '<a href="cerradodesesion.php">Cerrar sesion</a>';
 ?>
