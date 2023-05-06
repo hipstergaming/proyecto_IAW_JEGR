@@ -1,7 +1,7 @@
 <?php
 //    Variables
-   $id_libro=$_GET['id_libro'];
-   $idusu=$_GET['idusu'];
+	$id_libro=$_GET['id_libro'];
+	$idu_su=$_GET['id_usu'];
 
 
     //Establezco conexion
@@ -46,8 +46,8 @@
 							</label>
 						</div>
                      
-                        <input type="hidden" name="id" value="<?php echo $id ?>">
-                        
+                        <input type="hidden" name="id_usu" value="<?php echo $id_libro ?>">
+                        <input type="hidden" name="id_libro" value="<?php echo $id_usu ?>">
 						
                         <!-- El envio -->
 						<div class="form-group">
