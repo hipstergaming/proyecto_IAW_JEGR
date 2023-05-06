@@ -7,6 +7,7 @@
 	session_start();
 
 	if(isset($_SESSION["usuario"])){
+	session_start();
 	$idusu=$_SESSION["id"];
 	$datosse="Select * from usuarios where id like $idusu";
 	}
@@ -43,7 +44,8 @@
 		
 	</head>
 	<body>
-		<?php
+	
+	<?php
 	if(isset($_SESSION["usuario"])){
 	?>
 		<a href="cerradodesesion.php" class='btn btn-primary '>Cerrar sesion</a>
