@@ -30,7 +30,7 @@
                     //Si hay coincidencia imprimo el nombre y pongo encontrado a true para finalizar el bucle
                         $encontrado=true;
                         session_start();
-                        $_SESSION["id_usu"] = $file['id_usuario'];
+                        $_SESSION["id_usu"] = $fila['id_usuario'];
                         $_SESSION["usuario"] =$usuario;
                         $_SESSION["rango"] = $fila['rango'];
                         
