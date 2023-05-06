@@ -7,7 +7,7 @@ $todo = $mysqli->query($sqljoin);
 session_start();
 
 if (isset($_SESSION['usuario'])) {
-	$idusu = $_SESSION["id_usu"];
+	$id_usu = $_SESSION["id_usu"];
 
 }
 ?>
@@ -91,7 +91,7 @@ if (isset($_SESSION['usuario'])) {
 					echo "<td>", $fila['Cantidad_dis'], "</td>";
 
 					if (isset($_SESSION['usuario'])) { 
-						echo "<td><a href='comprar.php?id_libro=$fila[id_libro]&idusu=$idusu' class='btn btn-danger'>Comprar</a></td>";
+						echo "<td><a href='comprar.php?id_libro=$fila[id_libro]&id_usu=$id_usu' class='btn btn-danger'>Comprar</a></td>";
 					} else {
 						echo "<td>Logueate para comprar</td>";
 					}
