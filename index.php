@@ -45,7 +45,6 @@
 	<body>
 	<?php
 	if(isset($_SESSION["usuario"])){
-	?>
 		<a href="cerradodesesion.php" class='btn btn-primary '>Cerrar sesion</a>
 		<?php
 	}else{
