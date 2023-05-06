@@ -4,6 +4,8 @@
 
 	$sqljoin= "Select * from autores,libros, editorial where libros.id_autor=autores.id_autor and libros.id_editorial=editorial.id_editorial";
 	$todo= $mysqli->query($sqljoin);
+	$idusu=$_SESSION["id"];
+	$datosse="Select * from usuarios where id like $idusu"
 	?>
 
 
@@ -57,7 +59,7 @@
 						<th>Editorial</th>
 						<th>ISBN</th>
 						<th>Cant. disponible</th>
-						<th></th>
+						<th>Comprar</th>
 						
 					</tr>
 					
@@ -74,9 +76,11 @@
 							echo"<td>",$fila['ISBN'],"</td>";
 							echo"<td>",$fila['Cantidad_dis'],"</td>";
 						
-							
-							echo"<td><a href='comprar.php?id=$fila[id_libro]' class='btn btn-danger'>Comprar</a></td>";
-						
+							if (isset($_SESSION)){
+							echo"<td><a href='comprar.php?id=$fila[id_libro]&idusu=$idusu' class='btn btn-danger'>Comprar</a></td>";
+							}else{
+								echo "<td>Logueate para comprar</td>";
+							}
 
 						echo "</tr>";
 					}
