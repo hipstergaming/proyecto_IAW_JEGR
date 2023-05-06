@@ -1,6 +1,6 @@
 <?php
 //    Variables
-   $id=$_GET['id'];
+   $id_libro=$_GET['id_libro'];
    $idusu=$_GET['idusu'];
 
 
