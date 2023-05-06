@@ -88,7 +88,7 @@ if (isset($_SESSION['usuario'])) {
 					echo "<td>", $fila['Titulo'], "</td>";
 					echo "<td>", $fila['Nombre_ed'], "</td>";
 					echo "<td>", $fila['ISBN'], "</td>";
-					echo "<td>", $fila['Cantidad_dis'], "</td>";
+					echo "<td>", $fila['cantidad_dis'], "</td>";
 
 					if (isset($_SESSION['usuario'])) { 
 						echo "<td><a href='comprar.php?id_libro=$fila[id_libro]&id_usu=$id_usu' class='btn btn-danger'>Comprar</a></td>";
