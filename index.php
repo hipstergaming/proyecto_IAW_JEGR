@@ -43,12 +43,18 @@
 		
 	</head>
 	<body>
+	<?php
 	if(isset($_SESSION["usuario"])){
+	?>
 		<a href="cerradodesesion.php" class='btn btn-primary '>Cerrar sesion</a>
+		<?php
 	}else{
+	?>
 		<a href="login.php" class='btn btn-primary '>Iniciar sesión</a>
 		<a href="registrar.php" class='btn btn-primary '>Registrar</a>
+		<?php
 	}
+	?>
 		<div class="container">
 			<h1>Bienvenido a la libreria cosmere</h1>
 			<br>
