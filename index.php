@@ -4,8 +4,12 @@
 
 	$sqljoin= "Select * from autores,libros, editorial where libros.id_autor=autores.id_autor and libros.id_editorial=editorial.id_editorial";
 	$todo= $mysqli->query($sqljoin);
+	session_start();
+
+	if(isset($_SESSION["usuario"])){
 	$idusu=$_SESSION["id"];
-	$datosse="Select * from usuarios where id like $idusu"
+	$datosse="Select * from usuarios where id like $idusu";
+	}
 	?>
 
 
@@ -39,8 +43,12 @@
 		
 	</head>
 	<body>
+	if(isset($_SESSION["usuario"])){
+		<a href="cerradodesesion.php" class='btn btn-primary '>Cerrar sesion</a>
+	}else{
 		<a href="login.php" class='btn btn-primary '>Iniciar sesión</a>
 		<a href="registrar.php" class='btn btn-primary '>Registrar</a>
+	}
 		<div class="container">
 			<h1>Bienvenido a la libreria cosmere</h1>
 			<br>
