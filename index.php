@@ -6,7 +6,7 @@
 	$todo= $mysqli->query($sqljoin);
 	
 	if(isset($_SESSION["usuario"])){
-		session_start();
+	session_start();
 	$idusu=$_SESSION["id"];
 	$datosse="Select * from usuarios where id like $idusu";
 	}
@@ -43,20 +43,19 @@
 		
 	</head>
 	<body>
-	<body>
+	
+	<?php
 	if(isset($_SESSION["usuario"])){
+	?>
 		<a href="cerradodesesion.php" class='btn btn-primary '>Cerrar sesion</a>
+	<?php
 	}else{
+	?>
 		<a href="login.php" class='btn btn-primary '>Iniciar sesión</a>
 		<a href="registrar.php" class='btn btn-primary '>Registrar</a>
+	<?php
 	}
-		
-	if(isset($_SESSION["usuario"])){
-		<a href="cerradodesesion.php" class='btn btn-primary '>Cerrar sesion</a>
-	}else{
-		<a href="login.php" class='btn btn-primary '>Iniciar sesión</a>
-		<a href="registrar.php" class='btn btn-primary '>Registrar</a>
-	}
+	?>
 		<div class="container">
 			<h1>Bienvenido a la libreria cosmere</h1>
 			<br>
