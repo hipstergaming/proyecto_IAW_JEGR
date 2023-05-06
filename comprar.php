@@ -1,6 +1,7 @@
 <?php
 //    Variables
    $id=$_GET['id'];
+   $idusu=$_GET['idusu'];
 
 
     //Establezco conexion
