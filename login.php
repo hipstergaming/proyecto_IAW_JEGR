@@ -16,6 +16,7 @@
             <input type="submit" value="Insertar">
             
         </form>
-        <p>¿No tienes cuenta?<a href="registrar.php">¡Registrate!</a></p>
+        <p>¿No tienes cuenta? <a href="registrar.php">¡Registrate!</a></p>
+        <p>Volver a <a href="index.php">Incio</a></p>
     </body>
 </html>
