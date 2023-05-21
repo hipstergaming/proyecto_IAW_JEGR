@@ -22,11 +22,13 @@ header nav {
     background-color: lightblue;
     padding-bottom: 100%;
 }
-.menu li{
-	padding: 20px;
-	
+
+.menu li {
+    padding: 20px;
+
 }
-.menu li a{
-	text-decoration: none;
+
+.menu li a {
+    text-decoration: none;
     color: black;
 }

@@ -46,7 +46,7 @@ if (isset($_SESSION['usuario'])) {
 	<?php
 	if (isset($_SESSION['usuario'])) {
 	?>
-		<a href="opciones_admin/editar_usuario.php" class='btn btn-primary '>Panel de control</a>
+		<a href="panel_de_control/iniciopanel.php" class='btn btn-primary '>Panel de control</a>
 		<a href="cerradodesesion.php" class='btn btn-primary '>Cerrar sesion</a>
 	<?php
 	} else {
