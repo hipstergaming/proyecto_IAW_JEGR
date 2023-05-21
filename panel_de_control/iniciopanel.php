@@ -11,31 +11,29 @@
 
 <body>
     <div class="container">
-        <header>
+    <header>
             <nav>
                 <ul class="menu">
-
                     <li>
                         <h3><a href="iniciopanel.php">Inicio</a></h3>
                     </li>
                     <li>
-                        <h3><a href="editar_usuario.php">Tus datos</a></h3>
+                        <h3><a href="tu_usuario/editar_usuario.php">Tus datos</a></h3>
                     </li>
                     <li>
-                        <h3><a href="editar_libro.php">Edicion de libros</a></h3>
+                        <h3><a href="listado_usuarios/listado_usuarios.php">Listado de usuarios</a></h3>
                     </li>
                     <li>
-                        <h3><a href="eliminar_libro.php">Borrado de libros</a></h3>
+                        <h3><a href="listado_libros/lista_libros.php">Edicion de libros</a></h3>
                     </li>
+
                 </ul>
             </nav>
         </header>
         <section>
             <h1>Bienvenido al maravilloso panel de control</h1>
+            <a href="../index.php">Volver al index</a>
         </section>
-
-
-
 
     </div>
 </body>

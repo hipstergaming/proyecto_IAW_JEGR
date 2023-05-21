@@ -1,19 +1,20 @@
 <?php
-require '../conexion.php';
+    require '../../conexion.php';
 
 session_start();
 
-$id_usu = $_SESSION['id_usu'];
-$usuario = "Select * from usuarios where id_usuario = $id_usu";
+$id_usuario = $_POST['id_usuario'];
+$usuario = "Select * from usuarios where id_usuario = $id_usuario";
 $datos_usu = $mysqli->query($usuario);
 
 $usuario = $_POST['usuario'];
 $contra = $_POST['contra'];
 $correo = $_POST['correo'];
+$rango= $_POST['rango'];
 $direccion = $_POST['direccion'];
 $telefono = $_POST['telefono'];
 
-$actualizar = "update usuarios set usuario='$usuario', contraseña='$contra', correo_electronico='$correo', direccion='$direccion', telefono='$telefono' where id_usuario='$id_usu'";
+$actualizar = "update usuarios set usuario='$usuario', contraseña='$contra', correo_electronico='$correo', direccion='$direccion', telefono='$telefono', rango='$rango' where id_usuario='$id_usuario'";
 $resultado = $mysqli->query($actualizar);
 
 
@@ -30,7 +31,7 @@ $resultado = $mysqli->query($actualizar);
 
 <body>
     <h1>Actualizado con exito!</h1>
-    <a href="editar_usuario.php">Volver</a>
+    <a href="../iniciopanel.php">Volver</a>
 </body>
 
 </html>

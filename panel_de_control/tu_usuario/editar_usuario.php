@@ -1,5 +1,5 @@
 <?php
-require '../conexion.php';
+require '../../conexion.php';
 $sqljoin = "Select * from autores,libros, editorial where libros.id_autor=autores.id_autor and libros.id_editorial=editorial.id_editorial";
 $todo = $mysqli->query($sqljoin);
 
@@ -21,26 +21,27 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="paneldecontrol.css">
+    <link rel="stylesheet" href="../paneldecontrol.css">
 </head>
 
 <body>
     <div class="container">
-        <header>
+    <header>
             <nav>
                 <ul class="menu">
                     <li>
-                        <h3><a href="iniciopanel.php">Inicio</a></h3>
+                        <h3><a href="../iniciopanel.php">Inicio</a></h3>
                     </li>
                     <li>
-                        <h3><a href="editar_usuario.php">Tus datos</a></h3>
+                        <h3><a href="../tu_usuario/editar_usuario.php">Tus datos</a></h3>
                     </li>
                     <li>
-                        <h3><a href="editar_libro.php">Edicion de libros</a></h3>
+                        <h3><a href="../listado_usuarios/listado_usuarios.php">Listado de usuarios</a></h3>
                     </li>
                     <li>
-                        <h3><a href="eliminar_libro.php">Borrado de libros</a></h3>
+                        <h3><a href="../listado_libros/lista_libros.php">Edicion de libros</a></h3>
                     </li>
+
                 </ul>
             </nav>
         </header>
@@ -78,6 +79,8 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
                 <?php
                 }
                 ?>
+                <br><br>
+                <p>Si desea dar de baja su usuario pulse <a href="eliminar.php?id_usuario=$id_usu">aquí</a></p>
         </section>
 
 

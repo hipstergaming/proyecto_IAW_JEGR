@@ -1,9 +1,8 @@
 <?php
 
-    require '../conexion.php';
-    $sqljoin = "Select * from autores,libros, editorial where libros.id_autor=autores.id_autor and libros.id_editorial=editorial.id_editorial";
-    $todo = $mysqli->query($sqljoin);
+    require '../../conexion.php';
 
+    $id_libro=$_GET['id_libro'];
     $borrado="delete from libros where id_libro='$id_libro'";
     $resultado = $mysqli->query($borrado);
 
@@ -21,7 +20,8 @@
 </head>
 
 <body>
-    
+    <h1>Libro eliminado con exito!</h1>
+    <a href="../iniciopanel.php">Volver a inicio</a>
 </body>
 
 </html>
