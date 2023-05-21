@@ -46,12 +46,12 @@
         <H1>Bienvenido a tu cuenta</H1>
                     <br>
                     <br>
-                    <form action="paneldecontrol.php" method="post">
+                    <form action="editar_usuario2.php" method="post">
                         <?php
                         while ($fila = $datos_usu->fetch_assoc()) {
                         ?>
                             <label for="Usuario"> Usuario:
-                                <input type="text" name="Usuario" id='usuario' placeholder="<?php echo $fila['usuario'] ?>" value="<?php echo $fila['usuario'] ?>">
+                                <input type="text" name="usuario" id='usuario' placeholder="<?php echo $fila['usuario'] ?>" value="<?php echo $fila['usuario'] ?>">
                             </label>
                             <br><br>
                             <label for="contra"> Contraseña:
@@ -63,13 +63,13 @@
                             </label>
                             <br><br>
                             <label for="direccion"> Direccion:
-                                <input type="mail" name="direccion" id='direccion' placeholder="<?php echo $fila['direccion'] ?>" value="<?php echo $fila['direccion'] ?>">
+                                <input type="text" name="direccion" id='direccion' placeholder="<?php echo $fila['direccion'] ?>" value="<?php echo $fila['direccion'] ?>">
                             </label>
                             <br><br>
                             <label for="correo"> Teléfono:
                                 <input type="number" name="telefono" id='telefono' placeholder="<?php echo $fila['telefono'] ?>" value="<?php echo $fila['telefono'] ?>">
                             </label>
-
+                                <input type="hidden" name="id_usuario" value="<?php echo $fila['id_usuario'] ?>">
                             <br><br>
                             <input type="submit" value="Actualiza tus datos" name="Enviar">
                             <?php
