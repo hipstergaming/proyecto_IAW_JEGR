@@ -6,9 +6,9 @@ $id_usu = $_GET['id_usu'];
 $cantidad = $_GET['cantidad'];
 
 $sql = "Select * from libros where id_libro=$id_libro";
-
 // Ejecuto la sentencia y guardo el resultado
 $resultado = $mysqli->query($sql);
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -28,15 +28,16 @@ $resultado = $mysqli->query($sql);
     <?php
 
 while($fila = $resultado->fetch_assoc()){
-    $cantidad_dis =$fila[$cantidad_dis];
-}
-    $cant_calc=$cantidad_dis-$cantidad;
+   $cant_dis=$fila['cantidad_dis'];
 
-    // $sql= "update base set nombre = '$nombre', correo = '$email', fecha = '$fecha', premium = '$premium' where id = '$id'";
-    $sql2 = "update compras set id_usuario= '$id_usu' id_libro = '$id_libro' cantidad_comprada= '$cantidad'";
+
+}
+    $calculo=$cant_dis - $cantidad;
+
+    $sql2="insert into compras (id_usuario, id_libro, cantidad_comprada, fecha_compra) values ($id_usu, $id_libro, $cantidad, curdate())";
     $resultado2 = $mysqli->query($sql2);
     
-    $sql3= "update libros set cantidad_dis = '$calc_cant' where id_libro = '$id_libro'";
+    $sql3= "update libros set cantidad_dis = '$calculo' where id_libro = '$id_libro'";
     $resultado3= $mysqli->query($sql3);
 
 

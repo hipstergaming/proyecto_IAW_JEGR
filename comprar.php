@@ -42,17 +42,17 @@
                         
                         <div class="form-group">
                             <label>¿Cuantos quieres?: 
-                                <input type="text" name="cantidad" class="form-control" required>
+                                <input type="number" name="cantidad" class="form-control" required>
 							</label>
 						</div>
                      
-                        <input type="hidden" name="id_usu" value="<?php echo $id_libro ?>">
-                        <input type="hidden" name="id_libro" value="<?php echo $id_usu ?>">
+                        <input type="hidden" name="id_usu" value="<?php echo $id_usu ?>">
+                        <input type="hidden" name="id_libro" value="<?php echo $id_libro ?>">
 						
                         <!-- El envio -->
 						<div class="form-group">
                             <label>
-                                <input type="submit" value="Registrar" class='btn btn-primary'>
+                                <input type="submit" value="Comprar" class='btn btn-primary'>
                                 <label>
                                     </div>
                                 </form>

@@ -26,6 +26,9 @@
                     <li>
                         <h3><a href="listado_libros/lista_libros.php">Edicion de libros</a></h3>
                     </li>
+                    <li>
+                        <h3><a href="lista_compras.php">Lista de tus compras</a></h3>
+                    </li>
 
                 </ul>
             </nav>
