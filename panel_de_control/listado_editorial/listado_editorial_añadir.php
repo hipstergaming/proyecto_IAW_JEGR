@@ -4,9 +4,9 @@ session_start();
 
 $id_usu = $_SESSION['id_usu'];
 
-$todos_usuarios = "Select * from usuarios";
-$resultado_usuarios = $mysqli->query($todos_usuarios);
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,6 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
 </head>
 
 <body>
-
     <div class="container">
     <header>
             <nav>
@@ -44,44 +43,46 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
                         <h3><a href="../lista_compras.php">Lista de tus compras </a></h3>
                     </li>
 
-
                 </ul>
             </nav>
         </header>
-        <main>
-            <section>
-                <h2>Lista de usuarios:</h2>
-                <br>
-                <br>
-                <a href="listado_usuarios_registrar.php">Registrar usuario nuevo</a>
-                <table class="tabla">
-                    <tr>
-                        <th>Id_usuario</th>
-                        <th>Nombre</th>
-                        <th>Rol</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
-                    </tr>
-                    <?php
-                    while ($fila = $resultado_usuarios->fetch_assoc()) {
-                    ?>
 
-                        <tr>
-                            <td><?php echo $fila['id_usuario'] ?></td>
-                            <td><?php echo $fila['usuario'] ?></td>
-                            <td><?php echo $fila['rango'] ?></td>
-                            <td><a href="listado_usuarios_editar.php?id_usuario=<?php echo $fila['id_usuario'] ?>">Editar</a></td>
-                            <td><a href="listado_usuarios_borrar.php?id_usuario=<?php echo $fila['id_usuario'] ?>">Eliminar</a></td>
+        <section class="editorial">
+            <H1>Agregar nueva editorial</H1>
+            <br>
+            <br>
 
-                        </tr>
-                    
+            <form action="listado_usuarios_editar2.php" method="post">
+                    <label for="nombre_ed"> Nombre de la nueva editorial:
+                        <input type="text" name="nombre_ed">
+                    </label>
+                    <br><br>
 
-                    <?php
-                    }
-                    ?>
-                </table>
-            </section>
-        </main>
+                    <label for="telefono"> Contraseña:
+                        <input type="number" name="telefono" >
+                    </label>
+                    <br><br>
+
+                    <label for="direccion"> Correo electronico:
+                        <input type="text" name="direccion">
+                    </label>
+                    <br><br>
+
+                    <label for="CIF"> Direccion:
+                        <input type="text" name="CIF" >
+                    </label>
+                    <br><br>
+
+                    <input type="hidden" name="id_editorial">
+                    <br><br>
+
+                    <input type="submit" value="Agregar" name="Enviar">
+
+        </section>
+
+
 
     </div>
 </body>
+
+</html>

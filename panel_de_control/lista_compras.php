@@ -3,10 +3,10 @@ require '../conexion.php';
 session_start();
 
 $id_usu=$_SESSION['id_usu'];
-$recoger_lista = "select * from compras where id_usuario = $id_usu";
-$resultado = $mysqli->query($recoger_lista);
-// $sqljoin = "Select * from autores,libros, editorial, compras where libros.id_autor=autores.id_autor and libros.id_editorial=editorial.id_editorial and id_usuario=$id_usu";
-// $todo = $mysqli->query($sqljoin);
+// $recoger_lista = "select * from compras where id_usuario = $id_usu";
+// $resultado = $mysqli->query($recoger_lista);
+$sqljoin = "Select * from autores,libros, editorial, compras, usuarios where libros.id_autor=autores.id_autor and libros.id_editorial=editorial.id_editorial and libros.id_libro=compras.id_libro and usuarios.id_usuario=compras.id_usuario and compras.id_usuario=$id_usu";
+$todo = $mysqli->query($sqljoin);
 
 
 
@@ -41,6 +41,13 @@ $resultado = $mysqli->query($recoger_lista);
                     <li>
                         <h3><a href="listado_libros/lista_libros.php">Edicion de libros</a></h3>
                     </li>
+                    <li>
+                        <h3><a href="listado_editorial/listado_editorial.php">Listado de editorial</a></h3>
+                    </li>
+                    <li>
+                        <h3><a href="lista_compras.php">Lista de tus compras </a></h3>
+                    </li>
+
 
                 </ul>
             </nav>
@@ -54,21 +61,19 @@ $resultado = $mysqli->query($recoger_lista);
                 <table class="tabla">
                     <tr>
                         <th>id_compra</th>
-                        <th>Nombre</th>
                         <th>Titulo</th>
                         <th>Cantidad comprada</th>
                         <th>Fecha compra</th>
                     </tr>
                     <?php
-                    while ($fila = $resultado->fetch_assoc()) {
+                    while ($fila = $todo->fetch_assoc()) {
                     ?>
 
                         <tr>
                             <td><?php echo $fila['id_compra'] ?></td>
-                            <td><?php echo $fila['id_compra'] ?></td>
-                            <td><?php echo $fila['id_compra'] ?></td>
-                            <td><?php echo $fila['id_compra'] ?></td>
-                            <td><?php echo $fila['id_compra'] ?></td>
+                            <td><?php echo $fila['Titulo'] ?></td>
+                            <td><?php echo $fila['cantidad_comprada'] ?></td>
+                            <td><?php echo $fila['fecha_compra'] ?></td>
 
 
                         </tr>

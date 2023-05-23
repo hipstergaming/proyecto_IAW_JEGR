@@ -26,7 +26,7 @@ $resultado2 = $mysqli->query($editorial);
 
 <body>
     <div class="container">
-        <header>
+    <header>
             <nav>
                 <ul class="menu">
                     <li>
@@ -40,6 +40,12 @@ $resultado2 = $mysqli->query($editorial);
                     </li>
                     <li>
                         <h3><a href="../listado_libros/lista_libros.php">Edicion de libros</a></h3>
+                    </li>
+                    <li>
+                        <h3><a href="../listado_editorial/listado_editorial.php">Listado de editorial</a></h3>
+                    </li>
+                    <li>
+                        <h3><a href="../lista_compras.php">Lista de tus compras </a></h3>
                     </li>
 
                 </ul>

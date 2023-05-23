@@ -1,8 +1,11 @@
 <?php
-
 require '../../conexion.php';
-$sqljoin = "Select * from autores,libros, editorial where libros.id_autor=autores.id_autor and libros.id_editorial=editorial.id_editorial";
-$todo = $mysqli->query($sqljoin);
+session_start();
+
+$id_usu = $_SESSION['id_usu'];
+
+$editorial = "Select * from editorial";
+$resultado = $mysqli->query($editorial);
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +20,7 @@ $todo = $mysqli->query($sqljoin);
 </head>
 
 <body>
+
     <div class="container">
     <header>
             <nav>
@@ -43,33 +47,37 @@ $todo = $mysqli->query($sqljoin);
                 </ul>
             </nav>
         </header>
-
         <main>
             <section>
-                <a href="agregar_libro.php">Registrar libro nuevo</a>
+                <h2>Listado de editoriales:</h2>
+                <br>
+                <br>
+                <a href="listado_editorial_añadir.php">Añadir nueva editorial</a>
                 <table class="tabla">
                     <tr>
-                        <th>Titulo</th>
-                        <th>Cantidad_disponible</th>
-                        <th>ISBN</th>
+                        <th>id_editorial</th>
+                        <th>Nombre</th>
+                        <th>Telefono</th>
+                        <th>Direccion</th>
+                        <th>CIF</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
                     </tr>
                     <?php
-                    while ($fila = $todo->fetch_assoc()) {
+                    while ($fila = $resultado->fetch_assoc()) {
                     ?>
 
                         <tr>
-                            <td><?php echo $fila['Titulo'] ?></td>
-                            <td><?php echo $fila['cantidad_dis'] ?></td>
-                            <td><?php echo $fila['ISBN'] ?></td>
-                            <td><a href="editar_libro.php?id_libro=<?php echo $fila['id_libro'] ?>">Editar</a></td>
-                            <td><a href="eliminar_libro.php?id_libro=<?php echo $fila['id_libro'] ?>">Eliminar</a></td>
+                            <td><?php echo $fila['id_editorial'] ?></td>
+                            <td><?php echo $fila['Nombre_ed'] ?></td>
+                            <td><?php echo $fila['Telefono'] ?></td>
+                            <td><?php echo $fila['Direccion'] ?></td>
+                            <td><?php echo $fila['CIF'] ?></td>
+                            <td><a href="listado_editorial_editar.php?id_editorial=<?php echo $fila['id_editorial'] ?>">Editar</a></td>
+                            <td><a href="listado_editorial_borrar.php?id_editorial=<?php echo $fila['id_editorial'] ?>">Eliminar</a></td>
 
                         </tr>
-                        <!-- <form action="opciones_admin/editar_usuarios2.php" method="get" id="compra" name="compra" autocomplete="off">
-
-                        </form> -->
+                    
 
                     <?php
                     }
@@ -77,7 +85,6 @@ $todo = $mysqli->query($sqljoin);
                 </table>
             </section>
         </main>
+
     </div>
 </body>
-
-</html>
