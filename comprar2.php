@@ -21,7 +21,7 @@ $resultado = $mysqli->query($sql);
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
-    <title>Club Deportivo La Venta</title>
+    <title>Libreria cosmere: Compra</title>
 </head>
 
 <body>

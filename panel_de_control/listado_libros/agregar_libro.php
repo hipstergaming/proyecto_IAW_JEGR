@@ -7,9 +7,6 @@ $editorial = "Select * from editorial";
 $resultado2 = $mysqli->query($editorial);
 session_start();
 
-// $id_usu = $_SESSION['id_usuario'];
-// $usuario = "Select * from usuarios where id_usuario = $id_usu";
-// $datos_usu = $mysqli->query($usuario);
 ?>
 
 <html lang="es">
@@ -22,7 +19,7 @@ session_start();
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
 
-    <title>Formulario de registro Cosmere</title>
+    <title>Libreria cosmere: Agregar nuevo libro</title>
     <style>
         .form-control {
             width: 850px;

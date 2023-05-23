@@ -19,7 +19,7 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="../../css/bootstrap.min.css">
 		
-		<title>Confirmando registro</title>
+		<title>Libreria cosmere: Registrar usuario</title>
 	</head>
 	<body>
 	<?php

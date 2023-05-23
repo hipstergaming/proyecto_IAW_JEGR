@@ -20,8 +20,8 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		
-		<title>Formulario de registro Cosmere</title>
-		<style>
+		<title>Libreria cosmere: Compra</title>
+			<style>
 			.form-control{
 				width:850px ;
 			}

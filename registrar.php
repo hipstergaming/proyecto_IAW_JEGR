@@ -7,7 +7,8 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		
-		<title>Formulario de registro Cosmere</title>
+		<title>Libreria cosmere: Registro</title>
+
 		<style>
 			.form-control{
 				width:850px ;

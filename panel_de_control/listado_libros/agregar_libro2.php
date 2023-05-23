@@ -19,7 +19,7 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="../../css/bootstrap.min.css">
 		
-		<title>Confirmando registro</title>
+        <title>Libreria cosmere: Agregar nuevo libro</title>
 	</head>
 	<body>
 	<?php

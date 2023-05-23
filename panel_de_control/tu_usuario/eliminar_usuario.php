@@ -14,7 +14,7 @@ $borrado = $mysqli->query($borrado);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Libreria cosmere: Darte de baja</title>
 </head>
 <body>
     <H1>Te has dado de baja con exito, muchas gracias por su apoyo</H1>

@@ -31,7 +31,7 @@ if (isset($_SESSION['usuario'])) {
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.dataTables.min.js"></script>
 
-	<title>Librería Cosmere</title>
+	<title>Librería Cosmere: Inicio</title>
 
 	<script>
 		$(document).ready(function() {
