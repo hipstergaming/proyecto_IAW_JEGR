@@ -18,11 +18,22 @@ $id_usu = $_SESSION['id_usu'];
     <title>Libreria cosmere: Nueva editorial</title>
     <link rel="stylesheet" href="../paneldecontrol.css">
     <link rel="icon" href="../images/Acero.ico" type="image/png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="estiloinicio.css">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
 </head>
 
 <body>
     <div class="container">
-    <header>
+        <header>
             <nav>
                 <ul class="menu">
                     <li>
@@ -44,7 +55,7 @@ $id_usu = $_SESSION['id_usu'];
                         <h3><a href="../listado_editorial/listado_editorial.php" id="admin">Listado de editorial</a></h3>
                     </li>
                     <li>
-                        <h3><a href="../../index.php" >Volver al index</a></h3>
+                        <h3><a href="../../index.php">Volver al index</a></h3>
                     </li>
                 </ul>
             </nav>
@@ -57,30 +68,30 @@ $id_usu = $_SESSION['id_usu'];
             <br>
 
             <form action="listado_usuarios_editar2.php" method="post">
-                    <label for="nombre_ed"> Nombre de la nueva editorial:
-                        <input type="text" name="nombre_ed">
-                    </label>
-                    <br><br>
+                <label for="nombre_ed"> Nombre de la nueva editorial:
+                    <input type="text" name="nombre_ed">
+                </label>
+                <br><br>
 
-                    <label for="telefono"> Contraseña:
-                        <input type="number" name="telefono" >
-                    </label>
-                    <br><br>
+                <label for="telefono"> Contraseña:
+                    <input type="number" name="telefono">
+                </label>
+                <br><br>
 
-                    <label for="direccion"> Correo electronico:
-                        <input type="text" name="direccion">
-                    </label>
-                    <br><br>
+                <label for="direccion"> Correo electronico:
+                    <input type="text" name="direccion">
+                </label>
+                <br><br>
 
-                    <label for="CIF"> Direccion:
-                        <input type="text" name="CIF" >
-                    </label>
-                    <br><br>
+                <label for="CIF"> Direccion:
+                    <input type="text" name="CIF">
+                </label>
+                <br><br>
 
-                    <input type="hidden" name="id_editorial">
-                    <br><br>
+                <input type="hidden" name="id_editorial">
+                <br><br>
 
-                    <input type="submit" value="Agregar" name="Enviar">
+                <input type="submit" value="Agregar" name="Enviar">
 
         </section>
 

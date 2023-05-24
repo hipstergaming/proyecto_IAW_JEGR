@@ -1,5 +1,5 @@
 <?php
-    require '../../conexion.php';
+require '../../conexion.php';
 
 session_start();
 
@@ -10,7 +10,7 @@ $datos_usu = $mysqli->query($usuario);
 $usuario = $_POST['usuario'];
 $contra = $_POST['contra'];
 $correo = $_POST['correo'];
-$rango= $_POST['rango'];
+$rango = $_POST['rango'];
 $direccion = $_POST['direccion'];
 $telefono = $_POST['telefono'];
 
@@ -28,6 +28,17 @@ $resultado = $mysqli->query($actualizar);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libreria cosmere: Editar usuario</title>
     <link rel="icon" href="../images/Acero.ico" type="image/png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="estiloinicio.css">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
 </head>
 
 <body>

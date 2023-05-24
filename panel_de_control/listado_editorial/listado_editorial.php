@@ -18,12 +18,23 @@ $resultado = $mysqli->query($editorial);
     <title>Libreria cosmere: Listado editorial</title>
     <link rel="stylesheet" href="../paneldecontrol.css">
     <link rel="icon" href="../images/Acero.ico" type="image/png">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="estiloinicio.css">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
 </head>
 
 <body>
 
     <div class="container">
-    <header>
+        <header>
             <nav>
                 <ul class="menu">
                     <li>
@@ -45,7 +56,7 @@ $resultado = $mysqli->query($editorial);
                         <h3><a href="../listado_editorial/listado_editorial.php" id="admin">Listado de editorial</a></h3>
                     </li>
                     <li>
-                        <h3><a href="../../index.php" >Volver al index</a></h3>
+                        <h3><a href="../../index.php">Volver al index</a></h3>
                     </li>
                 </ul>
             </nav>
@@ -81,7 +92,7 @@ $resultado = $mysqli->query($editorial);
                             <td><a href="listado_editorial_borrar.php?id_editorial=<?php echo $fila['id_editorial'] ?>">Eliminar</a></td>
 
                         </tr>
-                    
+
 
                     <?php
                     }

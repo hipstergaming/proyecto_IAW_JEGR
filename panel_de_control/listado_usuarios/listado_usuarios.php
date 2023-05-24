@@ -16,14 +16,26 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libreria cosmere: Listado usuarios</title>
-        <link rel="stylesheet" href="../paneldecontrol.css">
-        <link rel="icon" href="../images/Acero.ico" type="image/png">
-    </head>
+    <link rel="stylesheet" href="../paneldecontrol.css">
+    <link rel="icon" href="../images/Acero.ico" type="image/png">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="estiloinicio.css">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+</head>
 
 <body>
 
     <div class="container">
-    <header>
+        <header>
             <nav>
                 <ul class="menu">
                     <li>
@@ -45,7 +57,7 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
                         <h3><a href="../listado_editorial/listado_editorial.php" id="admin">Listado de editorial</a></h3>
                     </li>
                     <li>
-                        <h3><a href="../../index.php" >Volver al index</a></h3>
+                        <h3><a href="../../index.php">Volver al index</a></h3>
                     </li>
                 </ul>
             </nav>
@@ -77,7 +89,7 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
                             <td><a href="listado_usuarios_borrar.php?id_usuario=<?php echo $fila['id_usuario'] ?>">Eliminar</a></td>
 
                         </tr>
-                    
+
 
                     <?php
                     }

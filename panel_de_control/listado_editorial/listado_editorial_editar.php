@@ -20,6 +20,18 @@ $resultado = $mysqli->query($editorial);
     <title>Libreria cosmere: Editar editorial</title>
     <link rel="stylesheet" href="../paneldecontrol.css">
     <link rel="icon" href="../images/Acero.ico" type="image/png">
+
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="estiloinicio.css">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
 </head>
 
 <body>
