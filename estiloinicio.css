@@ -1,0 +1,15 @@
+body{
+    background-image: url("images/fondo.jpg");
+    background-size: cover;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+.usuario{
+    display: flex;
+    justify-content: end;
+    padding: 1%;
+    
+
+}

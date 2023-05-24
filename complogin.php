@@ -34,8 +34,8 @@
                         $_SESSION["usuario"] =$usuario;
                         $_SESSION["rango"] = $fila['rango'];
                         
-
-                        header("Location:panel_de_control/iniciopanel.php");
+                        
+                        header("Location:panel_de_control/index.php");
                     }else{
                         //No es necesario esto pero lo puse igual
                         $encontrado=false;

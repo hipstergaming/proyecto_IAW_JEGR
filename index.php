@@ -24,6 +24,7 @@ if (isset($_SESSION['usuario'])) {
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="estiloinicio.css">
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -43,6 +44,7 @@ if (isset($_SESSION['usuario'])) {
 
 <body>
 
+<section class="usuario">
 	<?php
 	if (isset($_SESSION['usuario'])) {
 	?>
@@ -56,6 +58,7 @@ if (isset($_SESSION['usuario'])) {
 	<?php
 	}
 	?>
+</section>
 	<div class="container">
 		<h1>Bienvenido a la libreria cosmere</h1>
 		<br>
