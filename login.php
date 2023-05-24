@@ -25,7 +25,7 @@
     <section class="login">
     <form action="complogin.php" method="post">
         <div class="form-floating mb-3">
-        <label>Usuario: <input type="text" name="usuario" placeholder="Usuario" required></label>
+        <label>Usuario: <input type="text" name="usuario" class="form-floating mb-3" placeholder="Usuario" required></label>
         <br>
         </div>
         <div class="form-floating mb-3">
