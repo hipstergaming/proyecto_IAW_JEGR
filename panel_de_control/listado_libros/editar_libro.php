@@ -48,6 +48,9 @@ $resultado2 = $mysqli->query($editorial);
                     <li>
                         <h3><a href="../listado_editorial/listado_editorial.php" id="admin">Listado de editorial</a></h3>
                     </li>
+                    <li>
+                        <h3><a href="../../index.php" >Volver al index</a></h3>
+                    </li>
                 </ul>
             </nav>
         </header>
