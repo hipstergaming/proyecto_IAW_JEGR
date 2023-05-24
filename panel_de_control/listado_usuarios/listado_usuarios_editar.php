@@ -30,23 +30,27 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
             <nav>
                 <ul class="menu">
                     <li>
-                        <h3><a href="../iniciopanel.php">Inicio</a></h3>
+                        <h3><a href="iniciopanel.php">Inicio</a></h3>
                     </li>
                     <li>
-                        <h3><a href="../tu_usuario/editar_usuario.php">Tus datos</a></h3>
+                        <h3><a href="tu_usuario/editar_usuario.php">Tus datos</a></h3>
                     </li>
                     <li>
-                        <h3><a href="../listado_usuarios/listado_usuarios.php">Listado de usuarios</a></h3>
+                        <h3><a href="lista_compras.php">Lista de tus compras</a></h3>
                     </li>
                     <li>
-                        <h3><a href="../listado_libros/editar_libro.php">Edicion de libros</a></h3>
+                        <h3><a href="listado_usuarios/listado_usuarios.php" id="admin">Listado de usuarios</a></h3>
                     </li>
                     <li>
-                        <h3><a href="../listado_libros/eliminar_libro.php">Borrado de libros</a></h3>
+                        <h3><a href="listado_libros/lista_libros.php" id="admin">Edicion de libros</a></h3>
+                    </li>
+                    <li>
+                        <h3><a href="listado_editorial/listado_editorial.php" id="admin">Listado de editorial</a></h3>
                     </li>
                 </ul>
             </nav>
         </header>
+
 
         <section class="tus_datos">
             <H1>Bienvenido al listado de usuarios</H1>
