@@ -8,8 +8,6 @@ $id_usu=$_SESSION['id_usu'];
 $sqljoin = "Select * from autores,libros, editorial, compras, usuarios where libros.id_autor=autores.id_autor and libros.id_editorial=editorial.id_editorial and libros.id_libro=compras.id_libro and usuarios.id_usuario=compras.id_usuario and compras.id_usuario=$id_usu";
 $todo = $mysqli->query($sqljoin);
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +19,7 @@ $todo = $mysqli->query($sqljoin);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libreria cosmere: Tu lista de compras</title>
     <link rel="stylesheet" href="paneldecontrol.css">
+    <script src="javascript.js"></script>
 </head>
 
 <body>
@@ -36,22 +35,21 @@ $todo = $mysqli->query($sqljoin);
                         <h3><a href="tu_usuario/editar_usuario.php">Tus datos</a></h3>
                     </li>
                     <li>
-                        <h3><a href="listado_usuarios/listado_usuarios.php">Listado de usuarios</a></h3>
+                        <h3><a href="lista_compras.php">Lista de tus compras</a></h3>
                     </li>
                     <li>
-                        <h3><a href="listado_libros/lista_libros.php">Edicion de libros</a></h3>
+                        <h3><a href="listado_usuarios/listado_usuarios.php" id="admin">Listado de usuarios</a></h3>
                     </li>
                     <li>
-                        <h3><a href="listado_editorial/listado_editorial.php">Listado de editorial</a></h3>
+                        <h3><a href="listado_libros/lista_libros.php" id="admin">Edicion de libros</a></h3>
                     </li>
                     <li>
-                        <h3><a href="lista_compras.php">Lista de tus compras </a></h3>
+                        <h3><a href="listado_editorial/listado_editorial.php" id="admin">Listado de editorial</a></h3>
                     </li>
-
-
                 </ul>
             </nav>
         </header>
+
         <main>
             <section>
                 <h2>Lista de usuarios:</h2>

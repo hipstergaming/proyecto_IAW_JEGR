@@ -31,21 +31,21 @@ $id_usu = $_SESSION['id_usu'];
                         <h3><a href="../tu_usuario/editar_usuario.php">Tus datos</a></h3>
                     </li>
                     <li>
-                        <h3><a href="../listado_usuarios/listado_usuarios.php">Listado de usuarios</a></h3>
+                        <h3><a href="../lista_compras.php">Lista de tus compras</a></h3>
                     </li>
                     <li>
-                        <h3><a href="../listado_libros/lista_libros.php">Edicion de libros</a></h3>
+                        <h3><a href="../listado_usuarios/listado_usuarios.php" id="admin">Listado de usuarios</a></h3>
                     </li>
                     <li>
-                        <h3><a href="../listado_editorial/listado_editorial.php">Listado de editorial</a></h3>
+                        <h3><a href="../listado_libros/lista_libros.php" id="admin">Edicion de libros</a></h3>
                     </li>
                     <li>
-                        <h3><a href="../lista_compras.php">Lista de tus compras </a></h3>
+                        <h3><a href="../listado_editorial/listado_editorial.php" id="admin">Listado de editorial</a></h3>
                     </li>
-
                 </ul>
             </nav>
         </header>
+
 
         <section class="editorial">
             <H1>Agregar nueva editorial</H1>

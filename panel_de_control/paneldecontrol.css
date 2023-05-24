@@ -35,6 +35,9 @@ header nav {
     color: black;
 }
 
+.admin{
+    display: none;
+}
 
 /* /////////////////////////////////LISTADO/TABLA////////////////////////////////////////// */
 
