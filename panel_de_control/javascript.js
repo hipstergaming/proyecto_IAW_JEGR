@@ -1,12 +1,11 @@
 
-    var rango=sessionStorage.getItem('rango');
+var rangojs = "<?php echo $_SESSION['rango'] ?>";
+document.write(rangojs);
+window.onload = function mostrar() {
+    if (rangojs == "ADMIN") {
+        $clase = document.getElementById('admin');
+        $clase = style.display = 'block';
 
-    window.onload = function mostrar(){
-        $clase=document.getElementById('admin');
-        $clase=style.display = 'block';
-
+    }else{
     }
-if (rango == "ADMIN"){
-        mostrar();
-        
 }

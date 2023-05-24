@@ -41,7 +41,7 @@
                         
                         
                         <div class="form-group">
-                            <label>¿Cuantos quieres?: 
+                            <label>¿Cuantos libros quieres?: 
                                 <input type="number" name="cantidad" class="form-control" required>
 							</label>
 						</div>

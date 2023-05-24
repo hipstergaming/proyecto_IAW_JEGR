@@ -4,7 +4,7 @@ session_start();
 
 $id_usu = $_SESSION['id_usu'];
 $rango = $_SESSION['rango'];
-
+// echo $rango;
 ?>
 
 <!DOCTYPE html>
@@ -15,10 +15,10 @@ $rango = $_SESSION['rango'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libreria cosmere: Panel de control</title>
-    <link rel="stylesheet" href="paneldecontrol.css">
+    <link href="paneldecontrol.css" rel="stylesheet">
     <script src="javascript.js"></script>
-</head>
 
+</head>
 
 <body>
     <div class="container">
