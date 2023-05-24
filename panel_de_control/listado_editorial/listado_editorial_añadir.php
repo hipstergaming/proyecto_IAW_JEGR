@@ -17,7 +17,7 @@ $id_usu = $_SESSION['id_usu'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libreria cosmere: Nueva editorial</title>
     <link rel="stylesheet" href="../paneldecontrol.css">
-    <link rel="shortcut icon" href="../../images/acero.png">
+    <link rel="icon" href="../images/Acero.ico" type="image/png">
 </head>
 
 <body>

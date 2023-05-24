@@ -17,8 +17,8 @@ $todo = $mysqli->query($sqljoin);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libreria cosmere: Tu lista de compras</title>
     <link rel="stylesheet" href="paneldecontrol.css">
-    <link rel="shortcut icon" href="../images/acero.png">
-    <!-- <script src="javascript.js"></script> -->
+    <link rel="icon" href="../images/Acero.ico" type="image/png">
+        <!-- <script src="javascript.js"></script> -->
 </head>
 
 <body>

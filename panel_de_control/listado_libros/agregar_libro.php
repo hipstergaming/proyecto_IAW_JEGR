@@ -20,7 +20,7 @@ session_start();
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
 
     <title>Libreria cosmere: Agregar nuevo libro</title>
-    <link rel="shortcut icon" href="../../images/acero.png">
+    <link rel="icon" href="../images/Acero.ico" type="image/png">
     <style>
         .form-control {
             width: 850px;

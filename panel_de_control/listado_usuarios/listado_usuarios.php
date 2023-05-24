@@ -17,8 +17,8 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libreria cosmere: Listado usuarios</title>
         <link rel="stylesheet" href="../paneldecontrol.css">
-        <link rel="shortcut icon" href="../../images/acero.png">
-</head>
+        <link rel="icon" href="../images/Acero.ico" type="image/png">
+    </head>
 
 <body>
 
