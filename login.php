@@ -17,6 +17,7 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
 
 </head>
