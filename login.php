@@ -25,11 +25,15 @@
     <section class="login">
     <form action="complogin.php" method="post">
         <div class="form-floating mb-3">
-        <label>Usuario: <input type="text" name="usuario" class="form-floating mb-3" placeholder="Usuario" required></label>
+        <label for="floatingInput">
+            Usuario: <input type="text" name="usuario" class="form-control" id="floatingInput" placeholder="Usuario" required>
+        </label>
         <br>
         </div>
         <div class="form-floating mb-3">
-        <label>Contraseña: <input type="password" name="contra" placeholder="Contraseña" required></label>
+        <label for="floatingInput">Contraseña:
+            <input type="password" name="contra" class="form-control" id="floatingInput" placeholder="Contraseña" required>
+        </label>
         <br>
         </div>
         <input type="submit" class="btn btn-primary" value="Insertar">
