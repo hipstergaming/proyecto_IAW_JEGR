@@ -6,7 +6,7 @@
 		
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
-		
+		<link rel="shortcut icon" href="../../images/acero.png">
 		<title>Libreria cosmere: Registro</title>
 
 		<style>

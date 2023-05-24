@@ -17,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libreria cosmere: Eliminar libro</title>
         <link rel="stylesheet" href="paneldecontrol.css">
+        <link rel="shortcut icon" href="../../images/acero.png">
 </head>
 
 <body>

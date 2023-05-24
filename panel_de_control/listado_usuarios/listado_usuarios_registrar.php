@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="../../css/bootstrap.min.css">
 		
 		<title>Libreria cosmere: Registrar usuario</title>
+		<link rel="shortcut icon" href="../../images/acero.png">
 
 		<style>
 			.form-control{

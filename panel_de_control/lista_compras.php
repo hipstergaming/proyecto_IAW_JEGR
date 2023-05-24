@@ -3,8 +3,6 @@ require '../conexion.php';
 session_start();
 
 $id_usu=$_SESSION['id_usu'];
-// $recoger_lista = "select * from compras where id_usuario = $id_usu";
-// $resultado = $mysqli->query($recoger_lista);
 $sqljoin = "Select * from autores,libros, editorial, compras, usuarios where libros.id_autor=autores.id_autor and libros.id_editorial=editorial.id_editorial and libros.id_libro=compras.id_libro and usuarios.id_usuario=compras.id_usuario and compras.id_usuario=$id_usu";
 $todo = $mysqli->query($sqljoin);
 
@@ -19,7 +17,8 @@ $todo = $mysqli->query($sqljoin);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libreria cosmere: Tu lista de compras</title>
     <link rel="stylesheet" href="paneldecontrol.css">
-    <script src="javascript.js"></script>
+    <link rel="shortcut icon" href="../images/acero.png">
+    <!-- <script src="javascript.js"></script> -->
 </head>
 
 <body>

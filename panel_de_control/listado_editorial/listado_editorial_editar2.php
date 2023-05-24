@@ -26,6 +26,7 @@ $CIF= $_POST['CIF'];
 		<link rel="stylesheet" href="../../css/bootstrap.min.css">
 		
         <title>Libreria cosmere: Editar editorial</title>
+        <link rel="shortcut icon" href="../../images/acero.png">
 	</head>
 	<body>
 	<?php

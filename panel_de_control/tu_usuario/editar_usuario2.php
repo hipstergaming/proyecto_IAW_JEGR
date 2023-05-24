@@ -26,6 +26,7 @@ $resultado = $mysqli->query($actualizar);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libreria cosmere: Editar tus datos</title>
+    <link rel="shortcut icon" href="../../images/acero.png">
 </head>
 
 <body>

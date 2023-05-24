@@ -20,6 +20,7 @@
 		<link rel="stylesheet" href="../../css/bootstrap.min.css">
 		
         <title>Libreria cosmere: Agregar nuevo libro</title>
+        <link rel="shortcut icon" href="../../images/acero.png">
 	</head>
 	<body>
 	<?php

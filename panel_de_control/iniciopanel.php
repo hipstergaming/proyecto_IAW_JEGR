@@ -16,6 +16,7 @@ $rango = $_SESSION['rango'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libreria cosmere: Panel de control</title>
     <link href="paneldecontrol.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/acero.png">
     <script src="javascript.js"></script>
 
 </head>

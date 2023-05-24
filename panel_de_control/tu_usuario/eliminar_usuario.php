@@ -15,6 +15,7 @@ $borrado = $mysqli->query($borrado);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libreria cosmere: Darte de baja</title>
+    <link rel="shortcut icon" href="../../images/acero.png">
 </head>
 <body>
     <H1>Te has dado de baja con exito, muchas gracias por su apoyo</H1>
