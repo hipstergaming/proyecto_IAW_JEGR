@@ -22,17 +22,22 @@
 </head>
 
 <body>
+    <section class="login">
     <form action="complogin.php" method="post">
+        <div class="form-floating mb-3">
         <label>Usuario: <input type="text" name="usuario" placeholder="Usuario" required></label>
         <br>
+        </div>
+        <div class="form-floating mb-3">
         <label>Contraseña: <input type="password" name="contra" placeholder="Contraseña" required></label>
         <br>
-
-        <input type="submit" value="Insertar">
+        </div>
+        <input type="submit" class="btn btn-primary" value="Insertar">
 
     </form>
     <p>¿No tienes cuenta? <a href="registrar.php">¡Registrate!</a></p>
     <p>Volver a <a href="index.php">Incio</a></p>
+    </section>
 </body>
 
 </html>
