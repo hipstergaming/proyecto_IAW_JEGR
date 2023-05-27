@@ -121,7 +121,7 @@ $rango = $_SESSION['rango'];
                 <h2>Listado de libros:</h2>
                 <br>
                 <br>
-                <table class="table table-striped table-bordered border-dark">
+                <table class="table table-striped table-light table-bordered border-dark">
                     <thead>
                         <tr>
                             <th>Titulo</th>

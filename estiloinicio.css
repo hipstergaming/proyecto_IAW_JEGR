@@ -10,17 +10,18 @@
     max-width: 1000px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 body{
     background-image: url("images/fondo.jpg");
-    /* background-size: cover; */
+    background-size: cover;
 }
 h1{
     display: flex;
     justify-content: center;
 }
-
+/* Formularios */
 
 .formu{
     display: flex;
@@ -30,3 +31,9 @@ h1{
 
 }
 
+
+/* Index */
+.usuario-index nav{
+    display: flex;
+    justify-content: flex-end;
+}

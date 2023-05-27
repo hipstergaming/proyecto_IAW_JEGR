@@ -132,7 +132,7 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
                 <h2>Listado de usuarios:</h2>
                 <br>
                 <br>
-                <table class="table table-striped table-bordered border-dark">
+                <table class="table table-striped table-light table-bordered border-dark">
                     <thead >
                         <tr>
                             <th>Id_usuario</th>

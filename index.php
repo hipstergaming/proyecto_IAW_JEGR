@@ -46,7 +46,8 @@ if (isset($_SESSION['usuario'])) {
 <body>
 
 	<div class="container">
-		<section class="usuario">
+		<header>
+		<nav>
 			<?php
 			if (isset($_SESSION['usuario'])) {
 			?>
@@ -60,14 +61,19 @@ if (isset($_SESSION['usuario'])) {
 			<?php
 			}
 			?>
-		</section>
+		
+		</nav>
+		</header>
+		<br><br>
+
+		<main>
 		<h1>Bienvenido a la libreria cosmere</h1>
 		<br>
+		
 
 		<div class="row">
 			<h2>Lista de libros a la venta:</h2>
 		</div>
-		<br>
 		<br>
 
 		<table id="tabla" class="display" style="width:100%">
@@ -106,6 +112,7 @@ if (isset($_SESSION['usuario'])) {
 				?>
 			</tbody>
 		</table>
+		</main>
 
 	</div>
 

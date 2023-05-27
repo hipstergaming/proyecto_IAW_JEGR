@@ -130,7 +130,7 @@ $todo = $mysqli->query($sqljoin);
                 <h2>Tus compras</h2>
                 <br>
                 <br>
-                <table class="table table-striped table-bordered border-dark">
+                <table class="table table-striped table-light table-bordered border-dark">
                     <thead>
                         <tr>
                             <th>id_compra</th>
