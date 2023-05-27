@@ -25,7 +25,7 @@ if (isset($_SESSION['usuario'])) {
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="estiloinicio.css">
-    <link rel="icon" href="../images/Acero.ico" type="image/png">
+    <link rel="icon" href="images/Acero.ico" type="image/png">
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

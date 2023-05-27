@@ -19,7 +19,7 @@ $resultado = $mysqli->query($sql1);
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="icon" href="../images/Acero.ico" type="image/png">
+    <link rel="icon" href="images/Acero.ico" type="image/png">
     <title>Libreria cosmere: Registro</title>
 
     <!-- Bootstrap CSS -->

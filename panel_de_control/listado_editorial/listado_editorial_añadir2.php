@@ -18,14 +18,13 @@ $resultado = $mysqli->query($editorial);
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="icon" href="../images/Acero.ico" type="image/png">
+    <link rel="icon" href="../../images/Acero.ico" type="image/png">
     <title>Libreria Cosmere: Nueva editorial</title>
 
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="estiloinicio.css">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -37,16 +37,16 @@ $todo = $mysqli->query($sqljoin);
 <body>
 
     <header>
-        <?php
-        if ($rango == "ADMIN") {
-        ?>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <a class="navbar-brand" href="#">
-                                <img src="../images/Acero.ico"> Panel de control
-                            </a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <a class="navbar-brand" href="#">
+                            <img src="../images/Acero.ico"> Panel de control
+                        </a>
+                        <?php
+                        if ($rango == "ADMIN") {
+                        ?>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
@@ -63,43 +63,43 @@ $todo = $mysqli->query($sqljoin);
                                 <a href="lista_compras.php" class="nav-link active">Lista de tus compras</a>
                             </li>
 
-                            <li class="nav-item">
-                                <a href="listado_usuarios/listado_usuarios.php" id="admin" class="nav-link active">Listado de usuarios</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Listado de usuarios
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="listado_usuarios/listado_usuarios.php">Listado de usuarios</a></li>
+                                    <li><a class="dropdown-item" href="listado_usuarios/listado_usuarios_registrar.php">Registrar usuario nuevo</a></li>
+                                </ul>
                             </li>
 
-                            <li class="nav-item">
-                                <a href="listado_libros/lista_libros.php" id="admin" class="nav-link active">Edicion de libros</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" id="navbarlibros" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Listado de libros
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarlibros">
+                                    <li><a class="dropdown-item" href="listado_libros/lista_libros.php">Listado de libros</a></li>
+                                    <li><a class="dropdown-item" href="listado_libros/agregar_libro.php">Agregar nuevo libro</a></li>
+                                </ul>
                             </li>
 
-                            <li class="nav-item">
-                                <a href="listado_editorial/listado_editorial.php" id="admin" class="nav-link active">Listado de editorial</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Listado de editoriales
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="listado_editorial/listado_editorial.php">Listado de editoriales</a></li>
+                                    <li><a class="dropdown-item" href="listado_editorial/listado_editorial_añadir.php">Registrar nueva editorial</a></li>
+                                </ul>
                             </li>
 
                             <li class="nav-item">
                                 <a href="../index.php" class="nav-link active">Volver al index</a>
                             </li>
-                        </ul>
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </div>
-                </div>
-            </nav>
 
-        <?php
-        } else {
-        ?>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <a class="navbar-brand" href="#">
-                                <img src="../images/Acero.ico"> Panel de control
-                            </a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
+                        <?php
+                        } else {
+                        ?>
                             <li class="nav-item">
                                 <a href="iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
                             </li>
@@ -115,46 +115,47 @@ $todo = $mysqli->query($sqljoin);
                             <li class="nav-item">
                                 <a href="../index.php" class="nav-link active">Volver al index</a>
                             </li>
-                        </ul>
-                    </div>
+                        <?php
+                        }
+                        ?>
+                    </ul>
                 </div>
-            </nav>
-        <?php
-        }
-        ?>
+            </div>
+        </nav>
     </header>
-    <div class="container">
 
+    <div class="container">
         <main>
             <section>
-                <h2>Lista de usuarios:</h2>
+                <h2>Tus compras</h2>
                 <br>
                 <br>
-                <a href="listado_usuarios_registrar.php">Registrar usuario nuevo</a>
-                <table class="tabla">
-                    <tr>
-                        <th>id_compra</th>
-                        <th>Titulo</th>
-                        <th>Cantidad comprada</th>
-                        <th>Fecha compra</th>
-                    </tr>
-                    <?php
-                    while ($fila = $todo->fetch_assoc()) {
-                    ?>
-
+                <table class="table table-striped table-bordered border-dark">
+                    <thead>
                         <tr>
-                            <td><?php echo $fila['id_compra'] ?></td>
-                            <td><?php echo $fila['Titulo'] ?></td>
-                            <td><?php echo $fila['cantidad_comprada'] ?></td>
-                            <td><?php echo $fila['fecha_compra'] ?></td>
-
-
+                            <th>id_compra</th>
+                            <th>Titulo</th>
+                            <th>Cantidad comprada</th>
+                            <th>Fecha compra</th>
                         </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        while ($fila = $todo->fetch_assoc()) {
+                        ?>
+
+                            <tr>
+                                <td><?php echo $fila['id_compra'] ?></td>
+                                <td><?php echo $fila['Titulo'] ?></td>
+                                <td><?php echo $fila['cantidad_comprada'] ?></td>
+                                <td><?php echo $fila['fecha_compra'] ?></td>
 
 
-                    <?php
-                    }
-                    ?>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
                 </table>
             </section>
         </main>
