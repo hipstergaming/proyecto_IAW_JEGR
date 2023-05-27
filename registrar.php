@@ -29,15 +29,12 @@
 </head>
 
 <body>
-	<!-- <div class="container"> -->
 		<div class="">
 			<h1>Socios</h1>
 		</div>
 
-		 <!-- <div class="col">
-			<div class="col-md-8"> -->
-		<section class="formu"> 
-			<form action="registrar2.php" method="get" class="col-3" name="registro" autocomplete="off">
+		<div class="formu"> 
+				<form action="registrar2.php" method="get" class="col-3" name="registro" autocomplete="off">
 
 				<!-- usuario -->
 				<div class="form-floating mb-3">
@@ -45,9 +42,8 @@
 					<label for="floatingInput">Nombre de usuario:</label>
 					<br>
 				</div>
+
 				<!-- Contraseña -->
-
-
 				<div class="form-floating mb-3">
 					<input type="password" name="contra" class="form-control" id="floatingInput" placeholder="" required>
 					<label for="floatingInput">Contraseña:</label>
@@ -77,12 +73,17 @@
 				</div>
 
 				<!-- El envio -->
-						<input type="submit" value="Registrar" class='btn btn-primary'>
+				<input type="submit" value="Registrar" class='btn btn-primary'>
 				
+				<div class="login-enlaces">
+					<p>¿Ya tienes una cuenta? <a href="login.php">¡Inicia sesión!</a></p>
+					<p>Volver a <a href="index.php">Incio</a></p>
+				</div>
 			</form>
-		 </section>
-		<!-- </div>
-	</div>  -->
+			</section>
+
+</div>
+
 
 </body>
 
