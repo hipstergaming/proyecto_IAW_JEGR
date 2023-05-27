@@ -121,60 +121,60 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
     </header>
 
 
-    <div class="container">
+    <!-- <div class="container"> -->
         <section class="tus_datos">
+            <br>
             <H1>Bienvenido a tu cuenta</H1>
             <br>
-            <br>
-            <p>Edite sus datos en este formulario</p>
             <div class="formu">
                 <section>
-                <form action="editar_usuario2.php" method="post">
-                    <?php
-                    while ($fila = $datos_usu->fetch_assoc()) {
-                    ?>
-                        <div class="form-floating mb-3">
-                            <input type="text" name="usuario" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['usuario'] ?>">
-                            <label for="floatingInput"> Usuario:</label>
+                    <h3>Edite sus datos aquí:</h3>
+                    <form action="editar_usuario2.php" method="post">
+                        <?php
+                        while ($fila = $datos_usu->fetch_assoc()) {
+                        ?>
+                            <div class="form-floating mb-3">
+                                <input type="text" name="usuario" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['usuario'] ?>">
+                                <label for="floatingInput"> Usuario:</label>
 
-                            <br>
-                        </div>
+                                <br>
+                            </div>
 
-                        <div class="form-floating mb-3">
-                            <input type="password" name="contra" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['contraseña'] ?>">
-                            <label for="floatingInput"> Contraseña:</label>
+                            <div class="form-floating mb-3">
+                                <input type="password" name="contra" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['contraseña'] ?>">
+                                <label for="floatingInput"> Contraseña:</label>
 
-                            <br>
-                        </div>
+                                <br>
+                            </div>
 
-                        <div class="form-floating mb-3">
-                            <input type="mail" name="correo" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['correo_electronico'] ?>">
-                            <label for="floatingInput"> Correo electronico:</label>
-                            <br>
-                        </div>
+                            <div class="form-floating mb-3">
+                                <input type="mail" name="correo" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['correo_electronico'] ?>">
+                                <label for="floatingInput"> Correo electronico:</label>
+                                <br>
+                            </div>
 
-                        <div class="form-floating mb-3">
-                            <input type="text" name="direccion" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['direccion'] ?>">
-                            <label for="floatingInput"> Direccion:</label>
-                            <br>
-                        </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" name="direccion" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['direccion'] ?>">
+                                <label for="floatingInput"> Direccion:</label>
+                                <br>
+                            </div>
 
-                        <div class="form-floating mb-3">
-                            <input type="number" name="telefono" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['telefono'] ?>">
-                            <label for="floatingInput"> Teléfono:</label>
-                            <br>
-                        </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" name="telefono" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['telefono'] ?>">
+                                <label for="floatingInput"> Teléfono:</label>
+                                <br>
+                            </div>
 
-                        <input type="hidden" name="id_usuario" value="<?php echo $fila['id_usuario'] ?>">
-                        <input type="submit" class="btn btn-primary" value="Actualiza tus datos" name="Enviar">
-                    <?php
-                    }
-                    ?>
-                </form>
+                            <input type="hidden" name="id_usuario" value="<?php echo $fila['id_usuario'] ?>">
+                            <input type="submit" class="btn btn-primary" value="Actualiza tus datos" name="Enviar">
+                        <?php
+                        }
+                        ?>
+                    </form>
+                    <p>Si desea dar de baja su usuario pulse <a href="eliminar.php?id_usuario=$id_usu">aquí</a></p>
                 </section>
-            
-            
-            <p>Si desea dar de baja su usuario pulse <a href="eliminar.php?id_usuario=$id_usu">aquí</a></p>
+
+
         </section>
 
 

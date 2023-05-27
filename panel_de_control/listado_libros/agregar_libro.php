@@ -1,4 +1,11 @@
 <?php
+require '../../conexion.php';
+$autores = "Select * from autores";
+$resultado1 = $mysqli->query($autores);
+
+$editoriales = "Select * from editorial";
+$resultado2 = $mysqli->query($editoriales);
+
 session_start();
 
 $rango = $_SESSION['rango'];
@@ -124,11 +131,10 @@ $rango = $_SESSION['rango'];
         </nav>
     </header>
     <main>
-    <div class="row">
+ 
+        
+        <div class="formu">
         <h1> Agregar libro nuevo</h1>
-    </div>
-
-    <div class="formu">
     <form action="agregar_libro2.php" method="get" class="col-3" name="registro" autocomplete="off">
 
         <div class="form-floating mb-3">

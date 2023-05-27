@@ -114,11 +114,11 @@ $rango = $_SESSION['rango'];
 			</div>
 		</nav>
 	</header>
-	<h1> Nuevo usuario para libreria</h1>
-
+	
 	<br><br><br>
-
+	
 	<div class="formu">
+		<h1> Nuevo usuario para libreria</h1>
 
 		<form action="listado_usuarios_registrar2.php" method="get" class="col-3" name="registro" autocomplete="off">
 

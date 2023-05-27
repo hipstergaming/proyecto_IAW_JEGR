@@ -1,5 +1,6 @@
 <?php
 require '../conexion.php';
+
 session_start();
 
 $id_usu = $_SESSION['id_usu'];

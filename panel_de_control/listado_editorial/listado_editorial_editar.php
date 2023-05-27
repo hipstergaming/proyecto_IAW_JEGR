@@ -118,9 +118,9 @@ $rango = $_SESSION['rango'];
         </nav>
     </header>
 
-    <h1>Editar editoriar</h1>
-<br>
-        <div class="formu">
+ 
+    <div class="formu">
+            <h1>Editar editoriar</h1>
         <form action="listado_usuarios_editar2.php" class="col-3" method="post">
             <?php
             while ($fila = $resultado->fetch_assoc()) {

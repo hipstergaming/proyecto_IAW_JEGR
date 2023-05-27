@@ -127,8 +127,8 @@ $rango = $_SESSION['rango'];
 
 
     <body>
-        <h1>Agregar nueva editorial</h1>
         <div class="formu">
+            <h1>Agregar nueva editorial</h1>
             <form action="listado_usuarios_editar2.php" class="col-3" method="post">
                 <div class="form-floating mb-3">
                     <input type="text" name="nombre_ed" class="form-control" id="floatingInput" placeholder="">

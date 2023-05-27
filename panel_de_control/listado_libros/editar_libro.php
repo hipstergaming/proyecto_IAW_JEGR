@@ -121,38 +121,36 @@ $rango = $_SESSION['rango'];
             </div>
         </nav>
     </header>
- 
 
+    
         <section id='Listado_libros'>
-
-            <br>
-            <br>
+            <div class="formu">
             <form action="editar_libro2.php" method="get" class="col-3" autocomplete="off">
+                <br>
                 <?php
-
                 while ($fila = $resultado->fetch_assoc()) {
                 ?>
                     <h2><?php echo $fila['Titulo'] ?></h2>
 
                     <div class="form-floating mb-3">
-                    <label for="floatingInput">Titulo</label>
-                    <br>
-                    <input type="text" name="Titulo" size="50" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Titulo'] ?>">
-                    <br><br>
+                        <label for="floatingInput">Titulo</label>
+                        <br>
+                        <input type="text" name="Titulo" size="50" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Titulo'] ?>">
+                        <br>
                     </div>
 
                     <div class="form-floating mb-3">
-                    <label for="floatingInput">Cantidad_disponible</label>
-                    <br>
-                    <input type="number" name="Cantidad_disponible" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['cantidad_dis'] ?>">
-                    <br><br>
+                        
+                        <input type="number" name="Cantidad_disponible" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['cantidad_dis'] ?>">
+                        <label for="floatingInput">Cantidad_disponible</label>
+                        <br>
                     </div>
 
                     <div class="form-floating mb-3">
-                    <label for="floatingInput">ISBN</label>
-                    <br>
-                    <input type="number" name="ISBN" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['ISBN'] ?>">
-                    <br><br>
+    
+                        <input type="number" name="ISBN" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['ISBN'] ?>">
+                        <label for="floatingInput">ISBN</label>
+                        <br>
                     </div>
 
 
@@ -160,14 +158,14 @@ $rango = $_SESSION['rango'];
                         <select name='autor' class="form-select" id="floatingSelect">
                             <?php
                             while ($fila = $resultado1->fetch_assoc()) {
-                                
+
                                 echo "<option value=", $fila['id_autor'], ">", $fila['Nombre'], "</option>";
                             }
                             ?>
-                            <label for="floatingSelect">Autor:</label>
                         </select>
-                    
-                    <br><br>
+                        <label for="floatingSelect">Autor:</label>
+
+                        <br>
                     </div>
 
 
@@ -178,10 +176,10 @@ $rango = $_SESSION['rango'];
                                 echo "<option value=", $fila['id_editorial'], ">", $fila['Nombre_ed'], "</option>";
                             }
                             ?>
-                            <label for="floatingSelect">Editorial:</label>
                         </select>
-                    
-                    <br><br>
+                        <label for="floatingSelect">Editorial:</label>
+
+                        <br>
                     </div>
                     <input type="hidden" name="id_libro" value="<?php echo $id_libro ?>">
 
@@ -192,11 +190,12 @@ $rango = $_SESSION['rango'];
                 }
                 ?>
             </form>
+            </div>
         </section>
-
-
-
     
+
+
+
 </body>
 
 </html>

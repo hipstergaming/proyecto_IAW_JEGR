@@ -12,15 +12,18 @@
     max-width: 1000px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 body {
     background-image: url("../images/fondo.jpg");
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .formu{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     

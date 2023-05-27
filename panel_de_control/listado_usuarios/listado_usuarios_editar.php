@@ -132,11 +132,10 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
         </nav>
     </header>
 
-    <H1>Bienvenido al listado de usuarios</H1>
-    <br>
-    <br>
-
+    
+    
     <div class="formu">
+        <H1>Bienvenido al listado de usuarios</H1>
         <form action="listado_usuarios_editar2.php" class="col-3" method="post">
             <?php
             while ($fila = $datos_usu->fetch_assoc()) {
