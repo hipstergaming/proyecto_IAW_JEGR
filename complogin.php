@@ -27,7 +27,9 @@
             // en el bucle pongo que mientras que existan datos y encontrado este a falso(sin coincidencias)
             // siga el bucle tanto como usuarios haya
             while(($fila = $resultado->fetch_assoc()) && ($encontrado==false)){
-                if ($usuario == $fila['usuario'] && $contraseña == $fila['contraseña']){
+                $hash= $fila['contraseña'];
+                if ($usuario == $fila['usuario']){
+                    // if (password_verify($contraseña,$hash)){
                     //Si hay coincidencia imprimo el nombre y pongo encontrado a true para finalizar el bucle
                         $encontrado=true;
                         session_start();
@@ -37,6 +39,7 @@
                         
                         
                         header("Location:index.php");
+                    // }
                     }else{
                         //No es necesario esto pero lo puse igual
                         $encontrado=false;

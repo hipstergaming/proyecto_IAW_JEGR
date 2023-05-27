@@ -45,22 +45,22 @@ if (isset($_SESSION['usuario'])) {
 
 <body>
 
-<section class="usuario">
-	<?php
-	if (isset($_SESSION['usuario'])) {
-	?>
-		<a href="panel_de_control/iniciopanel.php" class='btn btn-primary '>Panel de control</a>
-		<a href="cerradodesesion.php" class='btn btn-primary '>Cerrar sesion</a>
-	<?php
-	} else {
-	?>
-		<a href="login.php" class='btn btn-primary '>Iniciar sesión</a>
-		<a href="registrar.php" class='btn btn-primary '>Registrar</a>
-	<?php
-	}
-	?>
-</section>
 	<div class="container">
+		<section class="usuario">
+			<?php
+			if (isset($_SESSION['usuario'])) {
+			?>
+				<a href="panel_de_control/iniciopanel.php" class='btn btn-primary '>Panel de control</a>
+				<a href="cerradodesesion.php" class='btn btn-primary '>Cerrar sesion</a>
+			<?php
+			} else {
+			?>
+				<a href="login.php" class='btn btn-primary '>Iniciar sesión</a>
+				<a href="registrar.php" class='btn btn-primary '>Registrar</a>
+			<?php
+			}
+			?>
+		</section>
 		<h1>Bienvenido a la libreria cosmere</h1>
 		<br>
 

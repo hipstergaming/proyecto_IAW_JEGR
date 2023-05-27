@@ -32,6 +32,7 @@ $resultado = $mysqli->query($sql1);
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
+    
 
 </head>
 
@@ -40,6 +41,7 @@ $resultado = $mysqli->query($sql1);
     // Recojo los datos del GET
     $usuario = $_GET['usuario'];
     $contraseña = $_GET['contra'];
+    $contraseña_segura= password_hash($contraseña, PASSWORD_DEFAULT);
     $tlf = $_GET['telefono'];
     $direccion = $_GET['direccion'];
     $correo = $_GET['correo'];
@@ -66,7 +68,7 @@ $resultado = $mysqli->query($sql1);
     <?php
 
     } else {
-        $sql = "insert into usuarios (usuario, contraseña, correo_electronico, rango, direccion, telefono) values ('$usuario','$contraseña','$correo','CLIENTE','$direccion','$tlf')";
+        $sql = "insert into usuarios (usuario, contraseña, correo_electronico, rango, direccion, telefono) values ('$usuario','$contraseña_segura','$correo','CLIENTE','$direccion','$tlf')";
         $resultado = $mysqli->query($sql);
     ?>
         <br>

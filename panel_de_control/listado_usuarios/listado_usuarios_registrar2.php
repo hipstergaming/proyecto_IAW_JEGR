@@ -26,6 +26,7 @@
     // Recojo los datos del GET
 			$usuario=$_GET['usuario'];
 			$contraseña=$_GET['contra'];
+            $contraseña_segura= password_hash($contraseña, PASSWORD_DEFAULT);
 			$tlf=$_GET['telefono'];
 			$direccion=$_GET['direccion'];
 			$correo=$_GET['correo'];
@@ -53,7 +54,7 @@
                 <?php
 
             }else{
-                $sql= "insert into usuarios (usuario, contraseña, correo_electronico, rango, direccion, telefono) values ('$usuario','$contraseña','$correo','$rango','$direccion','$tlf')";
+                $sql= "insert into usuarios (usuario, contraseña, correo_electronico, rango, direccion, telefono) values ('$usuario','$contraseña_segura','$correo','$rango','$direccion','$tlf')";
                 $resultado= $mysqli->query($sql);
                 ?>
                     <br>
