@@ -10,7 +10,8 @@
     max-width: 1000px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    flex-direction: column;
+
 }
 
 body{
@@ -31,9 +32,15 @@ h1{
 
 }
 
+.login-enlaces{
+display: flex;
+flex-direction: column;
+align-items: center;
 
-/* Index */
+
+}
+/* Index
 .usuario-index nav{
     display: flex;
     justify-content: flex-end;
-}
+} */

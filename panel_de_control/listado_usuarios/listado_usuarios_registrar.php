@@ -25,148 +25,152 @@ $rango = $_SESSION['rango'];
 </head>
 
 <body>
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<div class="container-fluid">
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<a class="navbar-brand" href="../iniciopanel.php">
-							<img src="../../images/Acero.ico"> Panel de control
-						</a>
-						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<?php
-						if ($rango == "ADMIN") {
-						?>
+	<div class="container">
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="#">
+					<img src="../../images/Acero.ico"> Panel de control
+					</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+								<?php
+								if ($rango == "ADMIN") {
+								?>
 
-							<li class="nav-item">
-								<a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
-							</li>
+									<li class="nav-item">
+										<a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
+									</li>
 
-							<li class="nav-item">
-								<a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
-							</li>
+									<li class="nav-item">
+										<a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+									</li>
 
-							<li class="nav-item">
-								<a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
-							</li>
+									<li class="nav-item">
+										<a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
+									</li>
 
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									Listado de usuarios
-								</a>
-								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios.php">Listado de usuarios</a></li>
-									<li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios_registrar.php">Registrar usuario nuevo</a></li>
-								</ul>
-							</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											Listado de usuarios
+										</a>
+										<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+											<li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios.php">Listado de usuarios</a></li>
+											<li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios_registrar.php">Registrar usuario nuevo</a></li>
+										</ul>
+									</li>
 
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle active" href="#" id="navbarlibros" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									Listado de libros
-								</a>
-								<ul class="dropdown-menu" aria-labelledby="navbarlibros">
-									<li><a class="dropdown-item" href="../listado_libros/lista_libros.php">Listado de libros</a></li>
-									<li><a class="dropdown-item" href="../listado_libros/agregar_libro.php">Agregar nuevo libro</a></li>
-								</ul>
-							</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle active" href="#" id="navbarlibros" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											Listado de libros
+										</a>
+										<ul class="dropdown-menu" aria-labelledby="navbarlibros">
+											<li><a class="dropdown-item" href="../listado_libros/lista_libros.php">Listado de libros</a></li>
+											<li><a class="dropdown-item" href="../listado_libros/agregar_libro.php">Agregar nuevo libro</a></li>
+										</ul>
+									</li>
 
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									Listado de editoriales
-								</a>
-								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<li><a class="dropdown-item" href="../listado_editorial/listado_editorial.php">Listado de editoriales</a></li>
-									<li><a class="dropdown-item" href="../listado_editorial/listado_editorial_añadir.php">Registrar nueva editorial</a></li>
-								</ul>
-							</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											Listado de editoriales
+										</a>
+										<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+											<li><a class="dropdown-item" href="../listado_editorial/listado_editorial.php">Listado de editoriales</a></li>
+											<li><a class="dropdown-item" href="../listado_editorial/listado_editorial_añadir.php">Registrar nueva editorial</a></li>
+										</ul>
+									</li>
 
-							<li class="nav-item">
-								<a href="../../index.php" class="nav-link active">Volver al index</a>
-							</li>
+									<li class="nav-item">
+										<a href="../../index.php" class="nav-link active">Volver al index</a>
+									</li>
 
 
-						<?php
-						} else {
-						?>
+								<?php
+								} else {
+								?>
 
-							<li class="nav-item">
-								<a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
-							</li>
+									<li class="nav-item">
+										<a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
+									</li>
 
-							<li class="nav-item">
-								<a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
-							</li>
+									<li class="nav-item">
+										<a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+									</li>
 
-							<li class="nav-item">
-								<a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
-							</li>
+									<li class="nav-item">
+										<a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
+									</li>
 
-							<li class="nav-item">
-								<a href="../../index.php" class="nav-link active">Volver al index</a>
-							</li>
-						<?php
-						}
-						?>
-					</ul>
+									<li class="nav-item">
+										<a href="../../index.php" class="nav-link active">Volver al index</a>
+									</li>
+								<?php
+								}
+								?>
+							</ul>
+						</div>
+					</div>
+			</nav>
+		</header>
+
+		<br><br><br>
+<main>
+		<div class="formu">
+			<h1> Nuevo usuario para libreria</h1>
+
+			<form action="listado_usuarios_registrar2.php" method="get" name="registro" autocomplete="off">
+
+				<div class="form-floating mb-3">
+					<input type="text" name="usuario" class="form-control" id="floatingInput" placeholder="" required>
+					<label for="floatingInput">Nombre de usuario:</label>
+
 				</div>
-			</div>
-		</nav>
-	</header>
-	
-	<br><br><br>
-	
-	<div class="formu">
-		<h1> Nuevo usuario para libreria</h1>
 
-		<form action="listado_usuarios_registrar2.php" method="get" class="col-3" name="registro" autocomplete="off">
+				<div class="form-floating mb-3">
+					<label for="floatingInput">Contraseña:</label>
+					<input type="password" name="contra" class="form-control" required>
 
-			<div class="form-floating mb-3">
-				<input type="text" name="usuario" class="form-control" id="floatingInput" placeholder="" required>
-				<label for="floatingInput">Nombre de usuario:</label>
+				</div>
 
-			</div>
+				<div class="form-floating mb-3">
+					<label for="floatingInput">Correo electrónico:</label>
+					<input type="mail" name="correo" class="form-control" required>
 
-			<div class="form-floating mb-3">
-				<label for="floatingInput">Contraseña:</label>
-				<input type="password" name="contra" class="form-control" required>
+				</div>
 
-			</div>
+				<div class="form-floating mb-3">
+					<label for="floatingInput">Teléfono:</label>
+					<input type="number" name="telefono" maxlength="9" class="form-control" required>
 
-			<div class="form-floating mb-3">
-				<label for="floatingInput">Correo electrónico:</label>
-				<input type="mail" name="correo" class="form-control" required>
+				</div>
 
-			</div>
+				<div class="form-floating mb-3"></label>
+					<label for="floatingInput">Dirección:</label>
+					<input type="text" name="direccion" class="form-control" placeholder="Calle ..." required>
 
-			<div class="form-floating mb-3">
-				<label for="floatingInput">Teléfono:</label>
-				<input type="number" name="telefono" maxlength="9" class="form-control" required>
+				</div>
 
-			</div>
+				<div class="form-floating mb-3">
+					<select name="rango" class="form-select" id="floatingSelect">
+						<option selected>Selecciona el rango</option>
+						<option value="ADMIN">ADMIN</option>
+						<option value="USUARIO">USUARIO</option>
+					</select>
+					<label for="floatingSelect"> Rango:</label>
 
-			<div class="form-floating mb-3"></label>
-				<label for="floatingInput">Dirección:</label>
-				<input type="text" name="direccion" class="form-control" placeholder="Calle ..." required>
+				</div>
 
-			</div>
-
-			<div class="form-floating mb-3">
-				<select name="rango" class="form-select" id="floatingSelect">
-					<option selected>Selecciona el rango</option>
-					<option value="ADMIN">ADMIN</option>
-					<option value="USUARIO">USUARIO</option>
-				</select>
-				<label for="floatingSelect"> Rango:</label>
-
-			</div>
-
-			<input type="submit" value="Registrar" class='btn btn-primary'>
+				<input type="submit" value="Registrar" class='btn btn-primary'>
 
 
-			<a href="../iniciopanel.php">Volver al inicio</a>
-		</form>
+				<a href="../iniciopanel.php">Volver al inicio</a>
+			</form>
+		</div>
+		</main>
 	</div>
 
 

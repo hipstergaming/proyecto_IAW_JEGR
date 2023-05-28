@@ -28,138 +28,141 @@ $rango = $_SESSION['rango'];
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <a class="navbar-brand" href="../iniciopanel.php">
-                            <img src="../../images/Acero.ico"> Panel de control
-                        </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <?php
-                        if ($rango == "ADMIN") {
-                        ?>
+    <div class="container">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                    <img src="../../images/Acero.ico"> Panel de control
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <?php
+                                if ($rango == "ADMIN") {
+                                ?>
 
-                            <li class="nav-item">
-                                <a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
-                            </li>
+                                    <li class="nav-item">
+                                        <a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
+                                    </li>
 
-                            <li class="nav-item">
-                                <a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
-                            </li>
+                                    <li class="nav-item">
+                                        <a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                    </li>
 
-                            <li class="nav-item">
-                                <a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
-                            </li>
+                                    <li class="nav-item">
+                                        <a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
+                                    </li>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Listado de usuarios
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios.php">Listado de usuarios</a></li>
-                                    <li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios_registrar.php">Registrar usuario nuevo</a></li>
-                                </ul>
-                            </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Listado de usuarios
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios.php">Listado de usuarios</a></li>
+                                            <li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios_registrar.php">Registrar usuario nuevo</a></li>
+                                        </ul>
+                                    </li>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" href="#" id="navbarlibros" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Listado de libros
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarlibros">
-                                    <li><a class="dropdown-item" href="../listado_libros/lista_libros.php">Listado de libros</a></li>
-                                    <li><a class="dropdown-item" href="../listado_libros/agregar_libro.php">Agregar nuevo libro</a></li>
-                                </ul>
-                            </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarlibros" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Listado de libros
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarlibros">
+                                            <li><a class="dropdown-item" href="../listado_libros/lista_libros.php">Listado de libros</a></li>
+                                            <li><a class="dropdown-item" href="../listado_libros/agregar_libro.php">Agregar nuevo libro</a></li>
+                                        </ul>
+                                    </li>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Listado de editoriales
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="../listado_editorial/listado_editorial.php">Listado de editoriales</a></li>
-                                    <li><a class="dropdown-item" href="../listado_editorial/listado_editorial_añadir.php">Registrar nueva editorial</a></li>
-                                </ul>
-                            </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Listado de editoriales
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="../listado_editorial/listado_editorial.php">Listado de editoriales</a></li>
+                                            <li><a class="dropdown-item" href="../listado_editorial/listado_editorial_añadir.php">Registrar nueva editorial</a></li>
+                                        </ul>
+                                    </li>
 
-                            <li class="nav-item">
-                                <a href="../../index.php" class="nav-link active">Volver al index</a>
-                            </li>
+                                    <li class="nav-item">
+                                        <a href="../../index.php" class="nav-link active">Volver al index</a>
+                                    </li>
 
 
-                        <?php
-                        } else {
-                        ?>
+                                <?php
+                                } else {
+                                ?>
 
-                            <li class="nav-item">
-                                <a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
-                            </li>
+                                    <li class="nav-item">
+                                        <a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
+                                    </li>
 
-                            <li class="nav-item">
-                                <a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
-                            </li>
+                                    <li class="nav-item">
+                                        <a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                    </li>
 
-                            <li class="nav-item">
-                                <a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
-                            </li>
+                                    <li class="nav-item">
+                                        <a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
+                                    </li>
 
-                            <li class="nav-item">
-                                <a href="../../index.php" class="nav-link active">Volver al index</a>
-                            </li>
-                        <?php
-                        }
-                        ?>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+                                    <li class="nav-item">
+                                        <a href="../../index.php" class="nav-link active">Volver al index</a>
+                                    </li>
+                                <?php
+                                }
+                                ?>
+                            </ul>
+                        </div>
+                    </div>
+            </nav>
+        </header>
 
- 
-    <div class="formu">
+
+        <div class="formu">
             <h1>Editar editoriar</h1>
-        <form action="listado_usuarios_editar2.php" class="col-3" method="post">
-            <?php
-            while ($fila = $resultado->fetch_assoc()) {
-            ?>
-                <div class="form-floating mb-3">
-                    <input type="text" name="nombre_ed" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Nombre_ed'] ?>">
-                    <label for="floatingInput"> Nombre</label>
-                    
-                    <br>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="number" name="telefono" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Telefono'] ?>">
-                    <label for="floatingInput"> Telefono</label>
+            <form action="listado_usuarios_editar2.php" method="post">
+                <?php
+                while ($fila = $resultado->fetch_assoc()) {
+                ?>
+                    <div class="form-floating mb-3">
+                        <input type="text" name="nombre_ed" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Nombre_ed'] ?>">
+                        <label for="floatingInput"> Nombre</label>
 
-                    <br>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" name="direccion" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Direccion'] ?>">
-                    <label for="floatingInput"> Direccion</label>
+                        <br>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" name="telefono" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Telefono'] ?>">
+                        <label for="floatingInput"> Telefono</label>
 
-                    <br>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" name="CIF" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['CIF'] ?>">
-                    <label for="floatingInput"> CIF</label>
-                <br>
-                </div>
+                        <br>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" name="direccion" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Direccion'] ?>">
+                        <label for="floatingInput"> Direccion</label>
 
-
-                <input type="hidden" name="id_editorial" value="<?php echo $fila['id_editorial'] ?>">
+                        <br>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" name="CIF" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['CIF'] ?>">
+                        <label for="floatingInput"> CIF</label>
+                        <br>
+                    </div>
 
 
-                <input type="submit" class="btn btn-primary" value="Actualiza tus datos" name="Enviar">
-            <?php
-            }
-            ?>
+                    <input type="hidden" name="id_editorial" value="<?php echo $fila['id_editorial'] ?>">
 
 
-            </div>
+                    <input type="submit" class="btn btn-primary" value="Actualiza tus datos" name="Enviar">
+                <?php
+                }
+                ?>
+
+
+        </div>
+    </div>
 </body>
 
 </html>

@@ -32,100 +32,102 @@ $rango = $_SESSION['rango'];
 </head>
 
 <body>
+<div class="container">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                <img src="../../images/Acero.ico"> Panel de control
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <a class="navbar-brand" href="../iniciopanel.php">
-                            <img src="../../images/Acero.ico"> Panel de control
-                        </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <?php
-                        if ($rango == "ADMIN") {
-                        ?>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <?php
+                            if ($rango == "ADMIN") {
+                            ?>
 
-                            <li class="nav-item">
-                                <a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
+                                </li>
 
-                            <li class="nav-item">
-                                <a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                </li>
 
-                            <li class="nav-item">
-                                <a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
+                                </li>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Listado de usuarios
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios.php">Listado de usuarios</a></li>
-                                    <li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios_registrar.php">Registrar usuario nuevo</a></li>
-                                </ul>
-                            </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Listado de usuarios
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios.php">Listado de usuarios</a></li>
+                                        <li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios_registrar.php">Registrar usuario nuevo</a></li>
+                                    </ul>
+                                </li>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" href="#" id="navbarlibros" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Listado de libros
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarlibros">
-                                    <li><a class="dropdown-item" href="../listado_libros/lista_libros.php">Listado de libros</a></li>
-                                    <li><a class="dropdown-item" href="../listado_libros/agregar_libro.php">Agregar nuevo libro</a></li>
-                                </ul>
-                            </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle active" href="#" id="navbarlibros" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Listado de libros
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarlibros">
+                                        <li><a class="dropdown-item" href="../listado_libros/lista_libros.php">Listado de libros</a></li>
+                                        <li><a class="dropdown-item" href="../listado_libros/agregar_libro.php">Agregar nuevo libro</a></li>
+                                    </ul>
+                                </li>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Listado de editoriales
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="../listado_editorial/listado_editorial.php">Listado de editoriales</a></li>
-                                    <li><a class="dropdown-item" href="../listado_editorial/listado_editorial_añadir.php">Registrar nueva editorial</a></li>
-                                </ul>
-                            </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Listado de editoriales
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="../listado_editorial/listado_editorial.php">Listado de editoriales</a></li>
+                                        <li><a class="dropdown-item" href="../listado_editorial/listado_editorial_añadir.php">Registrar nueva editorial</a></li>
+                                    </ul>
+                                </li>
 
-                            <li class="nav-item">
-                                <a href="../../index.php" class="nav-link active">Volver al index</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a href="../../index.php" class="nav-link active">Volver al index</a>
+                                </li>
 
 
-                        <?php
-                        } else {
-                        ?>
+                            <?php
+                            } else {
+                            ?>
 
-                            <li class="nav-item">
-                                <a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
+                                </li>
 
-                            <li class="nav-item">
-                                <a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                </li>
 
-                            <li class="nav-item">
-                                <a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
+                                </li>
 
-                            <li class="nav-item">
-                                <a href="../../index.php" class="nav-link active">Volver al index</a>
-                            </li>
-                        <?php
-                        }
-                        ?>
-                    </ul>
+                                <li class="nav-item">
+                                    <a href="../../index.php" class="nav-link active">Volver al index</a>
+                                </li>
+                            <?php
+                            }
+                            ?>
+                        </ul>
+                    </div>
                 </div>
-            </div>
         </nav>
     </header>
 
-    
-        <section id='Listado_libros'>
-            <div class="formu">
-            <form action="editar_libro2.php" method="get" class="col-3" autocomplete="off">
+
+    <section id='Listado_libros'>
+        <div class="formu">
+            <form action="editar_libro2.php" method="get" autocomplete="off">
                 <br>
                 <?php
                 while ($fila = $resultado->fetch_assoc()) {
@@ -140,14 +142,14 @@ $rango = $_SESSION['rango'];
                     </div>
 
                     <div class="form-floating mb-3">
-                        
+
                         <input type="number" name="Cantidad_disponible" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['cantidad_dis'] ?>">
                         <label for="floatingInput">Cantidad_disponible</label>
                         <br>
                     </div>
 
                     <div class="form-floating mb-3">
-    
+
                         <input type="number" name="ISBN" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['ISBN'] ?>">
                         <label for="floatingInput">ISBN</label>
                         <br>
@@ -190,8 +192,9 @@ $rango = $_SESSION['rango'];
                 }
                 ?>
             </form>
-            </div>
-        </section>
+        </div>
+    </section>
+</div>
     
 
 
