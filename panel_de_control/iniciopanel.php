@@ -117,7 +117,7 @@ $rango = $_SESSION['rango'];
 
         <section>
             <h1>Bienvenido al maravilloso panel de control</h1>
-            <a href="../index.php">Volver al index</a>
+            
         </section>
 
     </div>

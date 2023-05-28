@@ -9,11 +9,12 @@ $datos_usu = $mysqli->query($usuario);
 
 $usuario = $_POST['usuario'];
 $contra = $_POST['contra'];
+$contraseña_segura= password_hash($contra, PASSWORD_DEFAULT);
 $correo = $_POST['correo'];
 $direccion = $_POST['direccion'];
 $telefono = $_POST['telefono'];
 
-$actualizar = "update usuarios set usuario='$usuario', contraseña='$contra', correo_electronico='$correo', direccion='$direccion', telefono='$telefono' where id_usuario='$id_usu'";
+$actualizar = "update usuarios set usuario='$usuario', contraseña='$contraseña_segura', correo_electronico='$correo', direccion='$direccion', telefono='$telefono' where id_usuario='$id_usu'";
 $resultado = $mysqli->query($actualizar);
 
 

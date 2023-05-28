@@ -42,6 +42,7 @@ $resultado = $mysqli->query($sql1);
     $usuario = $_GET['usuario'];
     $contraseña = $_GET['contra'];
     $contraseña_segura= password_hash($contraseña, PASSWORD_DEFAULT);
+    
     $tlf = $_GET['telefono'];
     $direccion = $_GET['direccion'];
     $correo = $_GET['correo'];
@@ -54,9 +55,9 @@ $resultado = $mysqli->query($sql1);
     while ($fila = $resultado->fetch_assoc()) {
         if ($fila['usuario'] == $usuario) {
             $existe = 1;
-            echo "Se mete en existe y puso 1";
+            // Se mete en existe y puso 1;
         } else {
-            echo "Se mete en existe y pone 0";
+        //    Se mete en existe y pone 0
         }
     }
 

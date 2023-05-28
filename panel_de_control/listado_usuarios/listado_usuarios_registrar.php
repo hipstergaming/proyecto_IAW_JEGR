@@ -122,35 +122,35 @@ $rango = $_SESSION['rango'];
 		<div class="formu">
 			<h1> Nuevo usuario para libreria</h1>
 
-			<form action="listado_usuarios_registrar2.php" method="get" name="registro" autocomplete="off">
+			<form action="listado_usuarios_registrar2.php" method="get" class="col" name="registro" autocomplete="off">
 
 				<div class="form-floating mb-3">
 					<input type="text" name="usuario" class="form-control" id="floatingInput" placeholder="" required>
-					<label for="floatingInput">Nombre de usuario:</label>
+					<label for="floatingInput">Nombre de usuario</label>
 
 				</div>
 
 				<div class="form-floating mb-3">
-					<label for="floatingInput">Contraseña:</label>
-					<input type="password" name="contra" class="form-control" required>
+					<input type="password" name="contra" class="form-control" placeholder="" required>
+					<label for="floatingInput">Contraseña</label>
 
 				</div>
 
 				<div class="form-floating mb-3">
-					<label for="floatingInput">Correo electrónico:</label>
-					<input type="mail" name="correo" class="form-control" required>
+					<input type="mail" name="correo" class="form-control" placeholder="" required>
+					<label for="floatingInput">Correo electrónico</label>
 
 				</div>
 
 				<div class="form-floating mb-3">
-					<label for="floatingInput">Teléfono:</label>
-					<input type="number" name="telefono" maxlength="9" class="form-control" required>
+					<input type="number" name="telefono" maxlength="9" class="form-control" placeholder="" required>
+					<label for="floatingInput">Teléfono</label>
 
 				</div>
 
 				<div class="form-floating mb-3"></label>
-					<label for="floatingInput">Dirección:</label>
-					<input type="text" name="direccion" class="form-control" placeholder="Calle ..." required>
+				<input type="text" name="direccion" class="form-control" placeholder="Calle ..." required>
+				<label for="floatingInput">Dirección</label>
 
 				</div>
 
@@ -164,10 +164,9 @@ $rango = $_SESSION['rango'];
 
 				</div>
 
-				<input type="submit" value="Registrar" class='btn btn-primary'>
+				<input type="submit" value="Registrar" class='btn btn-primary col-12'>
 
 
-				<a href="../iniciopanel.php">Volver al inicio</a>
 			</form>
 		</div>
 		</main>

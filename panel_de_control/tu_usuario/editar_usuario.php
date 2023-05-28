@@ -134,39 +134,39 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
                         while ($fila = $datos_usu->fetch_assoc()) {
                         ?>
                             <div class="form-floating mb-3">
-                                <input type="text" name="usuario" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['usuario'] ?>">
+                                <input type="text" name="usuario" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['usuario'] ?>" required>
                                 <label for="floatingInput"> Usuario:</label>
 
                                 <br>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="password" name="contra" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['contraseña'] ?>">
+                                <input type="password" name="contra" class="form-control" id="floatingInput" placeholder="" required>
                                 <label for="floatingInput"> Contraseña:</label>
 
                                 <br>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="mail" name="correo" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['correo_electronico'] ?>">
+                                <input type="mail" name="correo" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['correo_electronico'] ?>" required>
                                 <label for="floatingInput"> Correo electronico:</label>
                                 <br>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="text" name="direccion" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['direccion'] ?>">
+                                <input type="text" name="direccion" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['direccion'] ?>" required>
                                 <label for="floatingInput"> Direccion:</label>
                                 <br>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="number" name="telefono" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['telefono'] ?>">
+                                <input type="number" name="telefono" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['telefono'] ?>" required>
                                 <label for="floatingInput"> Teléfono:</label>
                                 <br>
                             </div>
 
                             <input type="hidden" name="id_usuario" value="<?php echo $fila['id_usuario'] ?>">
-                            <input type="submit" class="btn btn-primary" value="Actualiza tus datos" name="Enviar">
+                            <input type="submit" class="btn btn-primary col-12" value="Actualiza tus datos" name="Enviar">
                         <?php
                         }
                         ?>
