@@ -4,7 +4,7 @@ session_start();
 $rango = $_SESSION['rango'];
 $id_usu = $_SESSION['id_usu'];
 $nuevo = $_GET['nuevo'];
-echo $nuevo;
+
 
 ?>
 
@@ -24,7 +24,7 @@ echo $nuevo;
 
 <body>
     <div class="container">
-        <header>
+    <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
@@ -39,72 +39,67 @@ echo $nuevo;
                                 <?php
                                 if ($rango == "ADMIN") {
                                 ?>
-
                                     <li class="nav-item">
-                                        <a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
+                                        <a href="iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
+                                        <a href="lista_compras.php" class="nav-link active">Lista de tus compras</a>
                                     </li>
+
 
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Listado de usuarios
+                                            Listados y registros
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios.php">Listado de usuarios</a></li>
-                                            <li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios_registrar.php">Registrar usuario nuevo</a></li>
-                                        </ul>
-                                    </li>
+                                            <li><a class="nav-link disabled">Usuarios</a></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=usuario">Listado de usuarios</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=usuario">Agregar nuevo usuario</a></li>
+                                            <li><hr class="dropdown-divider"></li>
 
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarlibros" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Listado de libros
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarlibros">
-                                            <li><a class="dropdown-item" href="../listado_libros/lista_libros.php">Listado de libros</a></li>
-                                            <li><a class="dropdown-item" href="../listado_libros/agregar_libro.php">Agregar nuevo libro</a></li>
-                                        </ul>
-                                    </li>
+                                            <li><a class="nav-link disabled">Autores</a></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=autor">Listado de autores</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=autor">Agregar nuevo autor</a></li>
+                                            <li><hr class="dropdown-divider"></li>
 
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Listado de editoriales
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="../listado_editorial/listado_editorial.php">Listado de editoriales</a></li>
-                                            <li><a class="dropdown-item" href="../listado_editorial/listado_editorial_añadir.php">Registrar nueva editorial</a></li>
+                                            <li><a class="nav-link disabled">Libros</a></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=libro">Listado de libros</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=libro">Agregar nuevo libro</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+
+                                            <li><a class="nav-link disabled">Editorial</a></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=editorial">Listado de editoriales</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=editorial">Registrar nueva editorial</a></li>
+                                            <li><hr class="dropdown-divider"></li>
                                         </ul>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../../index.php" class="nav-link active">Volver al index</a>
+                                        <a href="../index.php" class="nav-link active">Volver al index</a>
                                     </li>
-
 
                                 <?php
                                 } else {
                                 ?>
-
                                     <li class="nav-item">
-                                        <a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
+                                        <a href="iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
+                                        <a href="lista_compras.php" class="nav-link active">Lista de tus compras</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../../index.php" class="nav-link active">Volver al index</a>
+                                        <a href="../index.php" class="nav-link active">Volver al index</a>
                                     </li>
                                 <?php
                                 }
@@ -114,7 +109,6 @@ echo $nuevo;
                     </div>
             </nav>
         </header>
-
         <main>
             <div class="formu">
                 <!-- ###########EDITORIAL################# -->
@@ -123,7 +117,7 @@ echo $nuevo;
 
                 ?>
                     <h1>Nueva editorial para la libreria</h1>
-                    <form action="agregar2.php" method="get" class="col" name="registro" autocomplete="off">
+                    <form action="agregar2.php" method="POST" class="col" name="registro" autocomplete="off">
                         <div class="form-floating mb-3">
                             <input type="text" name="nombre_ed" class="form-control" id="floatingInput" placeholder="">
                             <label for="floatingInput"> Nombre</label>
@@ -163,7 +157,7 @@ echo $nuevo;
                     $resultado2 = $mysqli->query($editoriales);
                     ?>
                         <h1> Nuevo libro para la libreria</h1>
-                        <form action="agregar2.php" method="get" class="col" name="registro" autocomplete="off">
+                        <form action="agregar2.php" method="POST" class="col" name="registro" autocomplete="off">
 
                             <div class="form-floating mb-3">
                                 <input type="text" name="titulo" class="form-control" placeholder="" required>
@@ -222,7 +216,7 @@ echo $nuevo;
                     ?>
                         <h1> Nuevo usuario para la libreria</h1>
 
-                        <form action="agregar2.php" method="get" class="col" name="registro" autocomplete="off">
+                        <form action="agregar2.php" method="POST" class="col" name="registro" autocomplete="off">
 
                             <div class="form-floating mb-3">
                                 <input type="text" name="usuario" class="form-control" id="floatingInput" placeholder="" required>
@@ -275,7 +269,7 @@ echo $nuevo;
                     ?>
                         <h1> Nuevo autor para la libreria</h1>
 
-                        <form action="agregar2.php" method="get" class="col" name="registro" autocomplete="off">
+                        <form action="agregar2.php" method="POST" class="col" name="registro" autocomplete="off">
 
                             <div class="form-floating mb-3">
                                 <input type="text" name="nombre" class="form-control" id="floatingInput" placeholder="" required>

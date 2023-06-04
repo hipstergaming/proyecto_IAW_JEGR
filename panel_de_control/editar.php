@@ -38,72 +38,75 @@ $nuevo = $_GET['nuevo'];
                                 <?php
                                 if ($rango == "ADMIN") {
                                 ?>
-
                                     <li class="nav-item">
-                                        <a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
+                                        <a href="iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
+                                        <a href="lista_compras.php" class="nav-link active">Lista de tus compras</a>
                                     </li>
+
 
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Listado de usuarios
+                                            Listados y registros
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios.php">Listado de usuarios</a></li>
-                                            <li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios_registrar.php">Registrar usuario nuevo</a></li>
-                                        </ul>
-                                    </li>
+                                            <li><a class="nav-link disabled">Usuarios</a></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=usuario">Listado de usuarios</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=usuario">Agregar nuevo usuario</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarlibros" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Listado de libros
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarlibros">
-                                            <li><a class="dropdown-item" href="../listado_libros/lista_libros.php">Listado de libros</a></li>
-                                            <li><a class="dropdown-item" href="../listado_libros/agregar_libro.php">Agregar nuevo libro</a></li>
-                                        </ul>
-                                    </li>
+                                            <li><a class="nav-link disabled">Autores</a></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=autor">Listado de autores</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=autor">Agregar nuevo autor</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Listado de editoriales
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="../listado_editorial/listado_editorial.php">Listado de editoriales</a></li>
-                                            <li><a class="dropdown-item" href="../listado_editorial/listado_editorial_añadir.php">Registrar nueva editorial</a></li>
+                                            <li><a class="nav-link disabled">Libros</a></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=libro">Listado de libros</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=libro">Agregar nuevo libro</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+
+                                            <li><a class="nav-link disabled">Editorial</a></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=editorial">Listado de editoriales</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=editorial">Registrar nueva editorial</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
                                         </ul>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../../index.php" class="nav-link active">Volver al index</a>
+                                        <a href="../index.php" class="nav-link active">Volver al index</a>
                                     </li>
-
 
                                 <?php
                                 } else {
                                 ?>
-
                                     <li class="nav-item">
-                                        <a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
+                                        <a href="iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
+                                        <a href="lista_compras.php" class="nav-link active">Lista de tus compras</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../../index.php" class="nav-link active">Volver al index</a>
+                                        <a href="../index.php" class="nav-link active">Volver al index</a>
                                     </li>
                                 <?php
                                 }
@@ -119,14 +122,15 @@ $nuevo = $_GET['nuevo'];
                 <!-- ###########EDITORIAL################# -->
                 <?php
                 if ($nuevo == 'editorial') {
-                    $editorial = "Select * from editorial where id_editorial=$id_editorial";
+                    $id_editorial=$_GET['id_editorial'];
+                    $editorial = "Select * from editorial where id_editorial='$id_editorial'";
                     $resultado = $mysqli->query($editorial);
 
                 ?>
 
 
                     <h1>Editar editorial</h1>
-                    <form action="editar2.php" method="get" class="col" name="registro" autocomplete="off">
+                    <form action="editar2.php" method="POST" class="col" name="registro" autocomplete="off">
                         <?php
                         while ($fila = $resultado->fetch_assoc()) {
                         ?>
@@ -178,7 +182,7 @@ $nuevo = $_GET['nuevo'];
                     $resultado2 = $mysqli->query($editorial);
 
                     ?>
-                            <form action="editar2.php" method="get" class="col" name="registro" autocomplete="off">
+                        <form action="editar2.php" method="POST" class="col" name="registro" autocomplete="off">
                             <br>
                             <?php
                             while ($fila = $resultado->fetch_assoc()) {
@@ -249,14 +253,14 @@ $nuevo = $_GET['nuevo'];
 
                     $id_usu = $_GET['id_usuario'];
 
-                    $todos_usuarios = "Select * from usuarios";
-                    $resultado_usuarios = $mysqli->query($todos_usuarios);
+                    $el_usuario = "Select * from usuarios where id_usuario='$id_usu'";
+                    $resultado_usuario = $mysqli->query($el_usuario);
                     ?>
 
                         <H1>Editar usuario</H1>
-                        <form action="editar2.php" method="get" class="col" name="registro" autocomplete="off">
+                        <form action="editar2.php" method="POST" class="col" name="registro" autocomplete="off">
                             <?php
-                            while ($fila = $datos_usu->fetch_assoc()) {
+                            while ($fila = $resultado_usuario->fetch_assoc()) {
                             ?>
                                 <div class="form-floating mb-3">
                                     <input type="text" name="usuario" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['usuario'] ?>">
@@ -302,6 +306,7 @@ $nuevo = $_GET['nuevo'];
 
                                 </div>
 
+                                <input type="hidden" name="nuevo" value="<?php echo $nuevo ?>">
                                 <input type="hidden" name="id_usuario" value="<?php echo $fila['id_usuario'] ?>">
                                 <br>
 
@@ -316,22 +321,26 @@ $nuevo = $_GET['nuevo'];
                         } elseif ($nuevo == 'autor') {
                             $id_autor = $_GET['id_autor'];
 
-                            $todos_autores = "Select * from autores where id_autor='$id_autor'";
-                            $resultado_autores = $mysqli->query($todos_autores);
+                            $el_autor = "Select * from autores where id_autor='$id_autor'";
+                            $resultado_autor = $mysqli->query($el_autor);
                             ?>
                                 <h1> Editar autor</h1>
 
-                                <form action="editar2.php" method="get" class="col" name="registro" autocomplete="off">
+                                <form action="editar2.php" method="POST" class="col" name="registro" autocomplete="off">
+                                    <?php
+                                    while ($fila = $resultado_autor->fetch_assoc()) {
+                                    ?>
+                                        <div class="form-floating mb-3">
+                                            <input type="text" name="nombre" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Nombre'] ?> " required>
+                                            <label for="floatingInput">Nombre de autor</label>
 
-                                    <div class="form-floating mb-3">
-                                        <input type="text" name="nombre" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Nombre']?> " required>
-                                        <label for="floatingInput">Nombre de autor</label>
-
-                                    </div>
-                                    <input type="hidden" name="id_usuario" value="<?php echo $fila['id_autor'] ?>">
-                                    <input type="hidden" name="nuevo" value="<?php echo $nuevo ?>">
-                                    <input type="submit" value="Registrar" class='btn btn-primary col-12'>
-
+                                        </div>
+                                        <input type="hidden" name="id_usuario" value="<?php echo $fila['id_autor'] ?>">
+                                        <input type="hidden" name="nuevo" value="<?php echo $nuevo ?>">
+                                        <input type="submit" value="Registrar" class='btn btn-primary col-12'>
+                                    <?php
+                                    }
+                                    ?>
 
                                 </form>
 

@@ -66,7 +66,7 @@ $rango = $_SESSION['rango'];
                                             <li><hr class="dropdown-divider"></li>
 
                                             <li><a class="nav-link disabled">Autores</a></li>
-                                            <li><a class="dropdown-item" href="listados.php?nuevo=autor">Listado de libros</a></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=autor">Listado de autores</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=autor">Agregar nuevo autor</a></li>
                                             <li><hr class="dropdown-divider"></li>
 

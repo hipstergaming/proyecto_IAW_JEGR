@@ -24,6 +24,7 @@ echo $nuevo;
 
 <body>
     <div class="container">
+
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
@@ -39,72 +40,67 @@ echo $nuevo;
                                 <?php
                                 if ($rango == "ADMIN") {
                                 ?>
-
                                     <li class="nav-item">
-                                        <a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
+                                        <a href="iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
+                                        <a href="lista_compras.php" class="nav-link active">Lista de tus compras</a>
                                     </li>
+
 
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Listado de usuarios
+                                            Listados y registros
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios.php">Listado de usuarios</a></li>
-                                            <li><a class="dropdown-item" href="../listado_usuarios/listado_usuarios_registrar.php">Registrar usuario nuevo</a></li>
-                                        </ul>
-                                    </li>
+                                            <li><a class="nav-link disabled">Usuarios</a></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=usuario">Listado de usuarios</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=usuario">Agregar nuevo usuario</a></li>
+                                            <li><hr class="dropdown-divider"></li>
 
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarlibros" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Listado de libros
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarlibros">
-                                            <li><a class="dropdown-item" href="../listado_libros/lista_libros.php">Listado de libros</a></li>
-                                            <li><a class="dropdown-item" href="../listado_libros/agregar_libro.php">Agregar nuevo libro</a></li>
-                                        </ul>
-                                    </li>
+                                            <li><a class="nav-link disabled">Autores</a></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=autor">Listado de autores</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=autor">Agregar nuevo autor</a></li>
+                                            <li><hr class="dropdown-divider"></li>
 
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Listado de editoriales
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="../listado_editorial/listado_editorial.php">Listado de editoriales</a></li>
-                                            <li><a class="dropdown-item" href="../listado_editorial/listado_editorial_añadir.php">Registrar nueva editorial</a></li>
+                                            <li><a class="nav-link disabled">Libros</a></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=libro">Listado de libros</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=libro">Agregar nuevo libro</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+
+                                            <li><a class="nav-link disabled">Editorial</a></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=editorial">Listado de editoriales</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=editorial">Registrar nueva editorial</a></li>
+                                            <li><hr class="dropdown-divider"></li>
                                         </ul>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../../index.php" class="nav-link active">Volver al index</a>
+                                        <a href="../index.php" class="nav-link active">Volver al index</a>
                                     </li>
-
 
                                 <?php
                                 } else {
                                 ?>
-
                                     <li class="nav-item">
-                                        <a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
+                                        <a href="iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
+                                        <a href="lista_compras.php" class="nav-link active">Lista de tus compras</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../../index.php" class="nav-link active">Volver al index</a>
+                                        <a href="../index.php" class="nav-link active">Volver al index</a>
                                     </li>
                                 <?php
                                 }
@@ -114,19 +110,18 @@ echo $nuevo;
                     </div>
             </nav>
         </header>
-
         <main>
             <div class="formu">
                 <!-- ###########EDITORIAL################# -->
                 <?php
                 if ($nuevo == 'editorial') {
-
-                    $editorial = "Select * from editorial where id_editorial=$id_editorial";
+                    $editorial = "Select * from editorial";
                     $resultado = $mysqli->query($editorial);
-                    $nombre_ed = $_GET['nombre_ed'];
-                    $telefono = $_GET['telefono'];
-                    $direccion = $_GET['direccion'];
-                    $CIF = $_GET['CIF'];
+                    $nombre_ed = $_POST['nombre_ed'];
+                    $telefono = $_POST['telefono'];
+                    $direccion = $_POST['direccion'];
+                    $CIF = $_POST['CIF'];
+                    
                     while ($fila = $resultado->fetch_assoc()) {
                         if ($fila['Nombre_ed'] == $nombre_ed) {
                             $existe = 1;
@@ -149,7 +144,7 @@ echo $nuevo;
                         <p class="alert alert-primary" role="alert">Editorial agregada corractamente al sistema</p>
                         <br>
 
-                        <a href="../iniciopanel.php" class='btn btn-primary'>Regresar</a>
+                        <a href="iniciopanel.php" class='btn btn-primary'>Regresar</a>
                     <?php
                     }
                     ?>
@@ -160,11 +155,11 @@ echo $nuevo;
                     $sql1 = "Select * from libros";
                     $resultado = $mysqli->query($sql1);
 
-                    $titulo = $_GET['titulo'];
-                    $cantidad = $_GET['cantidad'];
-                    $ISBN = $_GET['ISBN'];
-                    $autor = $_GET['autor'];
-                    $editorial = $_GET['editorial'];
+                    $titulo = $_POST['titulo'];
+                    $cantidad = $_POST['cantidad'];
+                    $ISBN = $_POST['ISBN'];
+                    $autor = $_POST['autor'];
+                    $editorial = $_POST['editorial'];
 
                     while ($fila = $resultado->fetch_assoc()) {
                         if ($fila['Titulo'] == $titulo) {
@@ -189,7 +184,7 @@ echo $nuevo;
                         <p class="alert alert-primary" role="alert">Libro agregado correctamente a la Base de datos</p>
                         <br>
 
-                        <a href="../iniciopanel.php" class='btn btn-primary'>Regresar</a>
+                        <a href="iniciopanel.php" class='btn btn-primary'>Regresar</a>
                     <?php
                     }
                     ?>
@@ -199,13 +194,13 @@ echo $nuevo;
                 } elseif ($nuevo == 'usuario') {
                     $sql1 = "Select * from usuarios";
                     $resultado = $mysqli->query($sql1);
-                    $usuario = $_GET['usuario'];
-                    $contraseña = $_GET['contra'];
+                    $usuario = $_POST['usuario'];
+                    $contraseña = $_POST['contra'];
                     $contraseña_segura = password_hash($contraseña, PASSWORD_DEFAULT);
-                    $tlf = $_GET['telefono'];
-                    $direccion = $_GET['direccion'];
-                    $correo = $_GET['correo'];
-                    $rango = $_GET['rango'];
+                    $tlf = $_POST['telefono'];
+                    $direccion = $_POST['direccion'];
+                    $correo = $_POST['correo'];
+                    $rango = $_POST['rango'];
                     // Creo un contador para comprobar
                     $existe = 0;
 
@@ -235,7 +230,7 @@ echo $nuevo;
                         <p class="alert alert-primary" role="alert">Usuario creado con éxito</p>
                         <br>
 
-                        <a href="../iniciopanel.php" class='btn btn-primary'>Regresar</a>
+                        <a href="iniciopanel.php" class='btn btn-primary'>Regresar</a>
                     <?php
                     }
                     ?>
@@ -276,7 +271,7 @@ echo $nuevo;
                         <p class="alert alert-primary" role="alert">Autor creado con éxito</p>
                         <br>
 
-                        <a href="../iniciopanel.php" class='btn btn-primary'>Regresar</a>
+                        <a href="iniciopanel.php" class='btn btn-primary'>Regresar</a>
                     <?php
                     }
 

@@ -16,7 +16,7 @@
 
 body{
     background-image: url("images/fondo.jpg");
-    background-size: cover;
+    background-size: 100% ;
 }
 h1{
     display: flex;
