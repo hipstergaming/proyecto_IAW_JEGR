@@ -54,33 +54,31 @@ $rango = $_SESSION['rango'];
                                         <a href="lista_compras.php" class="nav-link active">Lista de tus compras</a>
                                     </li>
 
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Listado de usuarios
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="listado_usuarios/listado_usuarios.php">Listado de usuarios</a></li>
-                                            <li><a class="dropdown-item" href="listado_usuarios/listado_usuarios_registrar.php">Registrar usuario nuevo</a></li>
-                                        </ul>
-                                    </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarlibros" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Listado de libros
+                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Listados y registros
                                         </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarlibros">
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="nav-link disabled">Usuarios</a></li>
+                                            <li><a class="dropdown-item" href="listado_usuarios/listado_usuarios.php">Listado de libros</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=usuario">Agregar nuevo libro</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+
+                                            <li><a class="nav-link disabled">Autores</a></li>
                                             <li><a class="dropdown-item" href="listado_libros/lista_libros.php">Listado de libros</a></li>
-                                            <li><a class="dropdown-item" href="listado_libros/agregar_libro.php">Agregar nuevo libro</a></li>
-                                        </ul>
-                                    </li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=autor">Agregar nuevo autor</a></li>
+                                            <li><hr class="dropdown-divider"></li>
 
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Listado de editoriales
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="nav-link disabled">Libros</a></li>
+                                            <li><a class="dropdown-item" href="listado_libros/lista_libros.php">Listado de libros</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=libro">Agregar nuevo libro</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+
+                                            <li><a class="nav-link disabled">Editorial</a></li>
                                             <li><a class="dropdown-item" href="listado_editorial/listado_editorial.php">Listado de editoriales</a></li>
-                                            <li><a class="dropdown-item" href="listado_editorial/listado_editorial_añadir.php">Registrar nueva editorial</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=editorial">Registrar nueva editorial</a></li>
+                                            <li><hr class="dropdown-divider"></li>
                                         </ul>
                                     </li>
 
