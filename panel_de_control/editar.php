@@ -3,7 +3,7 @@ require '../conexion.php';
 session_start();
 $rango = $_SESSION['rango'];
 $nuevo = $_GET['nuevo'];
-echo $nuevo;
+
 
 ?>
 
@@ -121,12 +121,12 @@ echo $nuevo;
                 if ($nuevo == 'editorial') {
                     $editorial = "Select * from editorial where id_editorial=$id_editorial";
                     $resultado = $mysqli->query($editorial);
-                    $rango = $_SESSION['rango'];
+
                 ?>
 
 
-                    <h1>Editar editoriar</h1>
-                    <form action="listado_usuarios_editar2.php" method="post">
+                    <h1>Editar editorial</h1>
+                    <form action="editar2.php" method="get" class="col" name="registro" autocomplete="off">
                         <?php
                         while ($fila = $resultado->fetch_assoc()) {
                         ?>
@@ -156,7 +156,7 @@ echo $nuevo;
 
 
                             <input type="hidden" name="id_editorial" value="<?php echo $fila['id_editorial'] ?>">
-
+                            <input type="hidden" name="nuevo" value="<?php echo $nuevo ?>">
 
                             <input type="submit" class="btn btn-primary" value="Actualiza tus datos" name="Enviar">
                         <?php
@@ -170,29 +170,174 @@ echo $nuevo;
 
                     $sql = "Select * from libros where id_libro='$id_libro'";
                     $resultado = $mysqli->query($sql);
-                    
+
                     $autores = "Select * from autores";
                     $resultado1 = $mysqli->query($autores);
-                    
+
                     $editorial = "Select * from editorial";
                     $resultado2 = $mysqli->query($editorial);
 
                     ?>
+                            <form action="editar2.php" method="get" class="col" name="registro" autocomplete="off">
+                            <br>
+                            <?php
+                            while ($fila = $resultado->fetch_assoc()) {
+                            ?>
+                                <h2><?php echo $fila['Titulo'] ?></h2>
 
+                                <div class="form-floating mb-3">
+                                    <label for="floatingInput">Titulo</label>
+                                    <br>
+                                    <input type="text" name="Titulo" size="50" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Titulo'] ?>">
+                                    <br>
+                                </div>
+
+                                <div class="form-floating mb-3">
+
+                                    <input type="number" name="Cantidad_disponible" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['cantidad_dis'] ?>">
+                                    <label for="floatingInput">Cantidad_disponible</label>
+                                    <br>
+                                </div>
+
+                                <div class="form-floating mb-3">
+
+                                    <input type="number" name="ISBN" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['ISBN'] ?>">
+                                    <label for="floatingInput">ISBN</label>
+                                    <br>
+                                </div>
+
+
+                                <div class="form-floating mb-3">
+                                    <select name='autor' class="form-select" id="floatingSelect">
+                                        <?php
+                                        while ($fila = $resultado1->fetch_assoc()) {
+
+                                            echo "<option value=", $fila['id_autor'], ">", $fila['Nombre'], "</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                    <label for="floatingSelect">Autor:</label>
+
+                                    <br>
+                                </div>
+
+
+                                <div class="form-floating mb-3">
+                                    <select name='editorial' class="form-select" id="floatingSelect">
+                                        <?php
+                                        while ($fila = $resultado2->fetch_assoc()) {
+                                            echo "<option value=", $fila['id_editorial'], ">", $fila['Nombre_ed'], "</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                    <label for="floatingSelect">Editorial:</label>
+
+                                    <br>
+                                </div>
+                                <input type="hidden" name="id_libro" value="<?php echo $id_libro ?>">
+                                <input type="hidden" name="nuevo" value="<?php echo $nuevo ?>">
+                                <input type="submit" class="btn btn-primary" value="Actualizar libro">
+
+
+                            <?php
+                            }
+                            ?>
+                        </form>
                         <!-- ###########USUARIO################# -->
                     <?php
                 } elseif ($nuevo == 'usuario') {
+
+                    $id_usu = $_GET['id_usuario'];
+
+                    $todos_usuarios = "Select * from usuarios";
+                    $resultado_usuarios = $mysqli->query($todos_usuarios);
                     ?>
 
-                        <!-- ###########AUTOR################# -->
-                    <?php
-                } elseif ($nuevo == 'autor') {
-                    ?>
+                        <H1>Editar usuario</H1>
+                        <form action="editar2.php" method="get" class="col" name="registro" autocomplete="off">
+                            <?php
+                            while ($fila = $datos_usu->fetch_assoc()) {
+                            ?>
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="usuario" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['usuario'] ?>">
+                                    <label for="floatingInput"> Usuario:</label>
+
+                                    <br>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="password" name="contra" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['contraseña'] ?>">
+                                    <label for="floatingInput"> Contraseña:</label>
+
+                                    <br>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="mail" name="correo" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['correo_electronico'] ?>">
+                                    <label for="floatingInput"> Correo electronico:</label>
+
+                                    <br>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="direccion" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['direccion'] ?>">
+                                    <label for="floatingInput"> Direccion:</label>
+
+                                    <br>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <select name="rango" class="form-select" id="floatingSelect">
+                                        <option selected>Selecciona el rango</option>
+                                        <option value="ADMIN">ADMIN</option>
+                                        <option value="CLIENTE">CLIENTE</option>
+                                    </select>
+                                    <label for="floatingSelect"> Rango:</label>
+                                    <br>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="number" name="telefono" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['telefono'] ?>">
+                                    <label for="floatingInput"> Teléfono:</label>
+
+                                </div>
+
+                                <input type="hidden" name="id_usuario" value="<?php echo $fila['id_usuario'] ?>">
+                                <br>
+
+                                <input type="submit" value="Actualiza tus datos" class="btn btn-primary" name="Enviar">
+                            <?php
+                            }
+                            ?>
+
+                            <form>
+                                <!-- ###########AUTOR################# -->
+                            <?php
+                        } elseif ($nuevo == 'autor') {
+                            $id_autor = $_GET['id_autor'];
+
+                            $todos_autores = "Select * from autores where id_autor='$id_autor'";
+                            $resultado_autores = $mysqli->query($todos_autores);
+                            ?>
+                                <h1> Editar autor</h1>
+
+                                <form action="editar2.php" method="get" class="col" name="registro" autocomplete="off">
+
+                                    <div class="form-floating mb-3">
+                                        <input type="text" name="nombre" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Nombre']?> " required>
+                                        <label for="floatingInput">Nombre de autor</label>
+
+                                    </div>
+                                    <input type="hidden" name="id_usuario" value="<?php echo $fila['id_autor'] ?>">
+                                    <input type="hidden" name="nuevo" value="<?php echo $nuevo ?>">
+                                    <input type="submit" value="Registrar" class='btn btn-primary col-12'>
 
 
-                    <?php
-                }
-                    ?>
+                                </form>
+
+                            <?php
+                        }
+                            ?>
 
             </div>
         </main>
