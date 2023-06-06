@@ -3,8 +3,7 @@ require '../conexion.php';
 session_start();
 $rango = $_SESSION['rango'];
 $id_usu = $_SESSION['id_usu'];
-$nuevo = $_GET['nuevo'];
-echo $nuevo;
+$nuevo = $_POST['nuevo'];
 
 ?>
 
@@ -45,7 +44,7 @@ echo $nuevo;
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -61,22 +60,30 @@ echo $nuevo;
                                             <li><a class="nav-link disabled">Usuarios</a></li>
                                             <li><a class="dropdown-item" href="listados.php?nuevo=usuario">Listado de usuarios</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=usuario">Agregar nuevo usuario</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
                                             <li><a class="nav-link disabled">Autores</a></li>
                                             <li><a class="dropdown-item" href="listados.php?nuevo=autor">Listado de autores</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=autor">Agregar nuevo autor</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
                                             <li><a class="nav-link disabled">Libros</a></li>
                                             <li><a class="dropdown-item" href="listados.php?nuevo=libro">Listado de libros</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=libro">Agregar nuevo libro</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
                                             <li><a class="nav-link disabled">Editorial</a></li>
                                             <li><a class="dropdown-item" href="listados.php?nuevo=editorial">Listado de editoriales</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=editorial">Registrar nueva editorial</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
                                         </ul>
                                     </li>
 
@@ -92,7 +99,7 @@ echo $nuevo;
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -121,7 +128,7 @@ echo $nuevo;
                     $telefono = $_POST['telefono'];
                     $direccion = $_POST['direccion'];
                     $CIF = $_POST['CIF'];
-                    
+
                     while ($fila = $resultado->fetch_assoc()) {
                         if ($fila['Nombre_ed'] == $nombre_ed) {
                             $existe = 1;
@@ -241,15 +248,14 @@ echo $nuevo;
                 } elseif ($nuevo == 'autor') {
                     $sql1 = "Select * from usuarios";
                     $resultado = $mysqli->query($sql1);
-                    $
-
                     $existe = 0;
+                    $nombre=$_POST['nombre'];
 
 
                     // Compruebo si el usuario existe, si existe, da un error de alerta, si no existe, se inicia la consulta y da la alerta de bienvenida.
                     // En ambos casos te pondran un enlace al index.php
                     while ($fila = $resultado->fetch_assoc()) {
-                        if ($fila['usuario'] == $usuario) {
+                        if ($fila['Nombre'] == $nombre) {
                             $existe = 1;
                             // echo "Se mete en existe y puso 1";
                         } else {
@@ -260,11 +266,11 @@ echo $nuevo;
                     ?>
 
                         <p class="alert alert-danger">Error, el usuario ya existe</p>
-                        <a href="listado_usuarios_registrar.php">Volver</a>
+                        <a href="listado_usuarios_registrar.php" class='btn btn-primary'>Volver</a>
                     <?php
 
                     } else {
-                        $sql = "insert into autores (Nombre) values ('$usuario','$contraseña_segura','$correo','$rango','$direccion','$tlf')";
+                        $sql = "insert into autores (Nombre) values ('$nombre')";
                         $resultado = $mysqli->query($sql);
                     ?>
                         <br>

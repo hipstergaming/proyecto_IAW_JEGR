@@ -43,7 +43,7 @@ $nuevo = $_GET['nuevo'];
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -98,7 +98,7 @@ $nuevo = $_GET['nuevo'];
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -122,7 +122,7 @@ $nuevo = $_GET['nuevo'];
                 <!-- ###########EDITORIAL################# -->
                 <?php
                 if ($nuevo == 'editorial') {
-                    $id_editorial=$_GET['id_editorial'];
+                    $id_editorial = $_GET['id_editorial'];
                     $editorial = "Select * from editorial where id_editorial='$id_editorial'";
                     $resultado = $mysqli->query($editorial);
 
@@ -130,7 +130,7 @@ $nuevo = $_GET['nuevo'];
 
 
                     <h1>Editar editorial</h1>
-                    <form action="editar2.php" method="POST" class="col" name="registro" autocomplete="off">
+                    <form action="editar2.php" method="POST" class="col" name="editar" autocomplete="off">
                         <?php
                         while ($fila = $resultado->fetch_assoc()) {
                         ?>

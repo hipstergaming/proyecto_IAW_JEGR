@@ -23,7 +23,7 @@ $nuevo = $_POST['nuevo'];
 
 <body>
     <div class="container">
-    <header>
+        <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
@@ -43,7 +43,7 @@ $nuevo = $_POST['nuevo'];
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -59,22 +59,30 @@ $nuevo = $_POST['nuevo'];
                                             <li><a class="nav-link disabled">Usuarios</a></li>
                                             <li><a class="dropdown-item" href="listados.php?nuevo=usuario">Listado de usuarios</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=usuario">Agregar nuevo usuario</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
                                             <li><a class="nav-link disabled">Autores</a></li>
                                             <li><a class="dropdown-item" href="listados.php?nuevo=autor">Listado de autores</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=autor">Agregar nuevo autor</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
                                             <li><a class="nav-link disabled">Libros</a></li>
                                             <li><a class="dropdown-item" href="listados.php?nuevo=libro">Listado de libros</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=libro">Agregar nuevo libro</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
                                             <li><a class="nav-link disabled">Editorial</a></li>
                                             <li><a class="dropdown-item" href="listados.php?nuevo=editorial">Listado de editoriales</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=editorial">Registrar nueva editorial</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
                                         </ul>
                                     </li>
 
@@ -90,7 +98,7 @@ $nuevo = $_POST['nuevo'];
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -204,14 +212,14 @@ $nuevo = $_POST['nuevo'];
 
                     $usuario = $_POST['usuario'];
                     $contra = $_POST['contra'];
-                    $contraseña_segura= password_hash($contra, PASSWORD_DEFAULT);
+                    $contraseña_segura = password_hash($contra, PASSWORD_DEFAULT);
                     $correo = $_POST['correo'];
                     $direccion = $_POST['direccion'];
                     $telefono = $_POST['telefono'];
-                    
+
 
                     while ($fila = $resultado_usuarios->fetch_assoc()) {
-                        $contraseñadebdd=$fila['contraseña'];
+                        $contraseñadebdd = $fila['contraseña'];
                         if ($fila['usuario'] == $titulo) {
                             $existe = 1;
                             // echo "Se mete en existe y puso 1";
@@ -229,13 +237,13 @@ $nuevo = $_POST['nuevo'];
                     <?php
 
                     } else {
-                        if ($contra == $contraseñadebdd){
+                        if ($contra == $contraseñadebdd) {
                             $sql = "update usuarios set usuario='$usuario', correo_electronico='$correo', direccion='$direccion', telefono='$telefono' where id_usuario='$id_usu'";
                             $resultado = $mysqli->query($sql);
-                        }else{
-                        $sql = "update usuarios set usuario='$usuario', contraseña='$contraseña_segura', correo_electronico='$correo', direccion='$direccion', telefono='$telefono' where id_usuario='$id_usu'";
-                        $resultado = $mysqli->query($sql);
-                    }
+                        } else {
+                            $sql = "update usuarios set usuario='$usuario', contraseña='$contraseña_segura', correo_electronico='$correo', direccion='$direccion', telefono='$telefono' where id_usuario='$id_usu'";
+                            $resultado = $mysqli->query($sql);
+                        }
                     ?>
                         <br>
                         <p class="alert alert-primary" role="alert">Usuario editado correctamente </p>

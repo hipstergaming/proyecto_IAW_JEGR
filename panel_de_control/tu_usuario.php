@@ -1,8 +1,9 @@
 <?php
-require '../../conexion.php';
+require '../conexion.php';
 $sqljoin = "Select * from autores,libros, editorial where libros.id_autor=autores.id_autor and libros.id_editorial=editorial.id_editorial";
 $todo = $mysqli->query($sqljoin);
 
+$nuevo = 'usuario';
 session_start();
 $rango = $_SESSION['rango'];
 $id_usu = $_SESSION['id_usu'];
@@ -21,21 +22,30 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libreria cosmere: Editar tus datos</title>
-    <link rel="stylesheet" href="../paneldecontrol.css">
-    <link rel="icon" href="../../images/Acero.ico" type="image/png">
+    <link rel="stylesheet" href="paneldecontrol.css">
+    <link rel="icon" href="../images/Acero.ico" type="image/png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
+    <script>
+        function confirmacion() {
+            var respuesta = confirm("¿Estás seguro de que deseas visitar este enlace?");
+
+            if (respuesta) {
+                window.location.href = "borrar.php?id_usuario=<?php echo $id_usu ?>&nuevo=tuusuario";
+            }
+        }
+    </script>
 </head>
 
 <body>
     <div class="container">
-    <header>
+        <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
-                        <img src="../../images/Acero.ico"> Panel de control
+                        <img src="../images/Acero.ico"> Panel de control
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -47,15 +57,15 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
                                 if ($rango == "ADMIN") {
                                 ?>
                                     <li class="nav-item">
-                                        <a href="../iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
+                                        <a href="iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../lista_compras.php" class="nav-link active">Lista de tus compras</a>
+                                        <a href="lista_compras.php" class="nav-link active">Lista de tus compras</a>
                                     </li>
 
 
@@ -65,24 +75,32 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <li><a class="nav-link disabled">Usuarios</a></li>
-                                            <li><a class="dropdown-item" href="../listados.php?nuevo=usuario">Listado de usuarios</a></li>
-                                            <li><a class="dropdown-item" href="../agregar.php?nuevo=usuario">Agregar nuevo usuario</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=usuario">Listado de usuarios</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=usuario">Agregar nuevo usuario</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
                                             <li><a class="nav-link disabled">Autores</a></li>
-                                            <li><a class="dropdown-item" href="../listados.php?nuevo=autor">Listado de autores</a></li>
-                                            <li><a class="dropdown-item" href="../agregar.php?nuevo=autor">Agregar nuevo autor</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=autor">Listado de autores</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=autor">Agregar nuevo autor</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
                                             <li><a class="nav-link disabled">Libros</a></li>
-                                            <li><a class="dropdown-item" href="../listados.php?nuevo=libro">Listado de libros</a></li>
-                                            <li><a class="dropdown-item" href="../agregar.php?nuevo=libro">Agregar nuevo libro</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=libro">Listado de libros</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=libro">Agregar nuevo libro</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
                                             <li><a class="nav-link disabled">Editorial</a></li>
-                                            <li><a class="dropdown-item" href="../listados.php?nuevo=editorial">Listado de editoriales</a></li>
-                                            <li><a class="dropdown-item" href="../agregar.php?nuevo=editorial">Registrar nueva editorial</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="listados.php?nuevo=editorial">Listado de editoriales</a></li>
+                                            <li><a class="dropdown-item" href="agregar.php?nuevo=editorial">Registrar nueva editorial</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
                                         </ul>
                                     </li>
 
@@ -98,7 +116,7 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -124,7 +142,7 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
             <div class="formu">
                 <section>
                     <h3>Edite sus datos aquí:</h3>
-                    <form action="editar_usuario2.php" method="post">
+                    <form action="editar2.php" method="post" class="col" name="editar" autocomplete="off">
                         <?php
                         while ($fila = $datos_usu->fetch_assoc()) {
                         ?>
@@ -160,13 +178,14 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
                                 <br>
                             </div>
 
+                            <input type="hidden" name="nuevo" value="usuario">
                             <input type="hidden" name="id_usuario" value="<?php echo $fila['id_usuario'] ?>">
                             <input type="submit" class="btn btn-primary col-12" value="Actualiza tus datos" name="Enviar">
                         <?php
                         }
                         ?>
                     </form>
-                    <p>Si desea dar de baja su usuario pulse <a href="eliminar.php?id_usuario=$id_usu">aquí</a></p>
+                    <p>Si desea dar de baja su usuario pulse <a onclick="confirmacion(); return false" href="borrar.php?id_usuario=<?php echo $id_usu ?>&nuevo=tuusuario">aquí</a></p>
                 </section>
 
             </div>

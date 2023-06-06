@@ -47,7 +47,7 @@ $todo = $mysqli->query($sqljoin);
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -94,7 +94,7 @@ $todo = $mysqli->query($sqljoin);
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">

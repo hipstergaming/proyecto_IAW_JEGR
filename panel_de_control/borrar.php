@@ -3,8 +3,7 @@ require '../conexion.php';
 session_start();
 $rango = $_SESSION['rango'];
 $id_usu = $_SESSION['id_usu'];
-$nuevo = $_GET['nuevo']
-
+$nuevo = $_GET['nuevo'];
 
 ?>
 
@@ -44,7 +43,7 @@ $nuevo = $_GET['nuevo']
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -99,7 +98,7 @@ $nuevo = $_GET['nuevo']
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -219,20 +218,20 @@ $nuevo = $_GET['nuevo']
 
                 } else {
                     while ($fila = $resultado_usuarios->fetch_assoc()) {
-                        if ($fila['id_usuario'] != 1) {
+                        if ($id_usuario != 1) {
 
                             $sql = "delete from usuarios where is_usuario='$id_usuario'";
                             $resultado = $mysqli->query($sql);
                         } else {
                     ?>
-                            <p class="alert alert-primary" role="alert">No puedes eliminar al administrador</p>
+                            <p class="alert alert-danger" role="alert">No puedes dar de baja al administrador</p>
 
                     <?php
                         }
                     }
                     ?>
                     <br>
-                    <p class="alert alert-primary" role="alert">Usuario eliminado correctamente</p>
+                    <p class="alert alert-primary" role="alert">Usuario dado de baja correctamente</p>
                     <br>
 
                     <a href="iniciopanel.php" class='btn btn-primary'>Regresar</a>
@@ -275,10 +274,36 @@ $nuevo = $_GET['nuevo']
                 <?php
                 }
                 ?>
+                <!-- ####################################TU USUARIO################# -->
+                <?php
+            } elseif ($nuevo == 'tuusuario') {
+                $id_usuario = $_GET['id_usuario'];
+                $todos_usuarios = "Select * from usuarios";
+                $resultado_usuarios = $mysqli->query($todos_usuarios);
 
+
+                while ($fila = $resultado_usuarios->fetch_assoc()) {
+                    if ($id_usuario != 1) {
+
+                        $sql = "delete from usuarios where id_usuario='$id_usuario'";
+                        $resultado = $mysqli->query($sql);
+                    } else {
+                ?>
+                        <p class="alert alert-danger" role="alert">No puedes dar de baja a el administrador principal</p>
+
+                <?php
+                    }
+                }
+                ?>
+                <br>
+                <p class="alert alert-primary" role="alert">Usuario dado de baja, ¡Te extrañaremos!</p>
+                <br>
+
+                <a href="../cerradodesesion.php" class='btn btn-primary'>Regresar</a>
             <?php
             }
             ?>
+
         </main>
     </div>
 </body>

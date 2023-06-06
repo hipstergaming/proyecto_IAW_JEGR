@@ -24,7 +24,7 @@ $nuevo = $_GET['nuevo'];
 
 <body>
     <div class="container">
-    <header>
+        <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
@@ -44,7 +44,7 @@ $nuevo = $_GET['nuevo'];
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -60,22 +60,30 @@ $nuevo = $_GET['nuevo'];
                                             <li><a class="nav-link disabled">Usuarios</a></li>
                                             <li><a class="dropdown-item" href="listados.php?nuevo=usuario">Listado de usuarios</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=usuario">Agregar nuevo usuario</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
                                             <li><a class="nav-link disabled">Autores</a></li>
                                             <li><a class="dropdown-item" href="listados.php?nuevo=autor">Listado de autores</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=autor">Agregar nuevo autor</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
                                             <li><a class="nav-link disabled">Libros</a></li>
                                             <li><a class="dropdown-item" href="listados.php?nuevo=libro">Listado de libros</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=libro">Agregar nuevo libro</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
                                             <li><a class="nav-link disabled">Editorial</a></li>
                                             <li><a class="dropdown-item" href="listados.php?nuevo=editorial">Listado de editoriales</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=editorial">Registrar nueva editorial</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
                                         </ul>
                                     </li>
 
@@ -91,7 +99,7 @@ $nuevo = $_GET['nuevo'];
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">

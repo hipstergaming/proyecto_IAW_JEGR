@@ -44,12 +44,19 @@ while($fila = $resultado->fetch_assoc()){
 }
     $calculo=$cant_dis - $cantidad;
 
+    if ($calculo >= 0){
+
     $sql2="insert into compras (id_usuario, id_libro, cantidad_comprada, fecha_compra) values ($id_usu, $id_libro, $cantidad, curdate())";
     $resultado2 = $mysqli->query($sql2);
     
     $sql3= "update libros set cantidad_dis = '$calculo' where id_libro = '$id_libro'";
     $resultado3= $mysqli->query($sql3);
-
+    }else{
+        ?>
+        <p class="alert alert-danger">Error, no puedes comrpar más libros de los que hay en stock</p>
+        <a href="index.php" class='btn btn-primary'>Volver al index</a>
+        <?php
+    }
 
     ?>
     <br>

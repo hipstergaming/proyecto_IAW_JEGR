@@ -3,7 +3,7 @@ require '../conexion.php';
 session_start();
 $rango = $_SESSION['rango'];
 $id_usu = $_SESSION['id_usu'];
-$nuevo= $_GET['nuevo']
+$nuevo= $_GET['nuevo'];
 
 
 ?>
@@ -44,7 +44,7 @@ $nuevo= $_GET['nuevo']
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -91,7 +91,7 @@ $nuevo= $_GET['nuevo']
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="tu_usuario/editar_usuario.php" class="nav-link active">Tus datos</a>
+                                        <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
