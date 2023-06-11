@@ -65,7 +65,7 @@ $resultado = $mysqli->query($sql1);
 
     ?>
         <p class="alert alert-danger">Error, el usuario ya existe</p>
-        <a href="index.php">Volver</a>
+        <a href="index.php" class='btn btn-primary'>Volver al index</a>
     <?php
 
     } else {
@@ -76,7 +76,7 @@ $resultado = $mysqli->query($sql1);
         <p class="alert alert-primary" role="alert">Usuario creado con éxito, ¡Bienvenido al Cosmere!</p>
         <br>
 
-        <a href="index.php" class='btn btn-primary'>Regresar</a>
+        <a href="login.php" class='btn btn-primary'>Iniciar sesion</a>
     <?php
 
     }
