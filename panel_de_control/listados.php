@@ -19,6 +19,17 @@ $nuevo= $_GET['nuevo'];
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/jquery.dataTables.min.css">
+    <script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.dataTables.min.js"></script>
+    <script>
+		$(document).ready(function() {
+			$('#tabla').DataTable();
+		});
+	</script>
+
 </head>
 
 
@@ -122,7 +133,7 @@ $nuevo= $_GET['nuevo'];
                     <h2>Listado de editoriales:</h2>
                     <br>
                     <br>
-                    <table class="table table-striped table-light table-bordered border-dark">
+                    <table id="tabla" class="table table-striped table-light table-bordered border-dark display" style="width:100%">
                         <thead>
                             <tr>
                                 <th>id_editorial</th>
@@ -145,8 +156,8 @@ $nuevo= $_GET['nuevo'];
                                     <td><?php echo $fila['Telefono'] ?></td>
                                     <td><?php echo $fila['Direccion'] ?></td>
                                     <td><?php echo $fila['CIF'] ?></td>
-                                    <td><a href="editar.php?id_editorial=<?php echo $fila['id_editorial'] ?>&nuevo=editorial">Editar</a></td>
-                                    <td><a href="borrar.php?id_editorial=<?php echo $fila['id_editorial'] ?>&nuevo=editorial">Eliminar</a></td>
+                                    <td><a href="editar.php?id_editorial=<?php echo $fila['id_editorial'] ?>&nuevo=editorial" class="btn btn-primary">Editar</a></td>
+                                    <td><a href="borrar.php?id_editorial=<?php echo $fila['id_editorial'] ?>&nuevo=editorial" class="btn btn-danger">Eliminar</a></td>
 
                                 </tr>
                             <?php
@@ -166,7 +177,7 @@ $nuevo= $_GET['nuevo'];
                     <h2>Listado de libros:</h2>
                     <br>
                     <br>
-                    <table class="table table-striped table-light table-bordered border-dark">
+                    <table id="tabla" class="table table-striped table-light table-bordered border-dark display" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Titulo</th>
@@ -185,8 +196,8 @@ $nuevo= $_GET['nuevo'];
                                     <td><?php echo $fila['Titulo'] ?></td>
                                     <td><?php echo $fila['cantidad_dis'] ?></td>
                                     <td><?php echo $fila['ISBN'] ?></td>
-                                    <td><a href="editar.php?id_libro=<?php echo $fila['id_libro'] ?>&nuevo=libro">Editar</a></td>
-                                    <td><a href="borrar.php?id_libro=<?php echo $fila['id_libro'] ?>&nuevo=libro">Eliminar</a></td>
+                                    <td><a href="editar.php?id_libro=<?php echo $fila['id_libro'] ?>&nuevo=libro" class="btn btn-primary">Editar</a></td>
+                                    <td><a href="borrar.php?id_libro=<?php echo $fila['id_libro'] ?>&nuevo=libro" class="btn btn-danger">Eliminar</a></td>
 
                                 </tr>
 
@@ -206,7 +217,7 @@ $nuevo= $_GET['nuevo'];
                     <h2>Listado de usuarios:</h2>
                     <br>
                     <br>
-                    <table class="table table-striped table-light table-bordered border-dark">
+                    <table id="tabla" class="table table-striped table-light table-bordered border-dark display" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Id_usuario</th>
@@ -224,8 +235,8 @@ $nuevo= $_GET['nuevo'];
                                     <td><?php echo $fila['id_usuario'] ?></td>
                                     <td><?php echo $fila['usuario'] ?></td>
                                     <td><?php echo $fila['rango'] ?></td>
-                                    <td><a href="editar.php?id_usuario=<?php echo $fila['id_usuario'] ?>&nuevo=usuario">Editar</a></td>
-                                    <td><a href="borrar.php?id_usuario=<?php echo $fila['id_usuario'] ?>&nuevo=usuario">Eliminar</a></td>
+                                    <td><a href="editar.php?id_usuario=<?php echo $fila['id_usuario'] ?>&nuevo=usuario" class="btn btn-primary">Editar</a></td>
+                                    <td><a href="borrar.php?id_usuario=<?php echo $fila['id_usuario'] ?>&nuevo=usuario" class="btn btn-danger">Eliminar</a></td>
 
                                 </tr>
 
@@ -246,7 +257,7 @@ $nuevo= $_GET['nuevo'];
                     <h2>Listado de autores:</h2>
                     <br>
                     <br>
-                    <table class="table table-striped table-light table-bordered border-dark">
+                    <table id="tabla" class="table table-striped table-light table-bordered border-dark display" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Id_autor</th>
@@ -262,8 +273,8 @@ $nuevo= $_GET['nuevo'];
                                 <tr>
                                     <td><?php echo $fila['id_autor'] ?></td>
                                     <td><?php echo $fila['Nombre'] ?></td>
-                                    <td><a href="editar.php?id_autor=<?php echo $fila['id_autor'] ?>&nuevo=autor">Editar</a></td>
-                                    <td><a href="borrar.php?id_usuario=<?php echo $fila['id_autor'] ?>&nuevo=autor">Eliminar</a></td>
+                                    <td><a href="editar.php?id_autor=<?php echo $fila['id_autor'] ?>&nuevo=autor" class="btn btn-primary">Editar</a></td>
+                                    <td><a href="borrar.php?id_autor=<?php echo $fila['id_autor'] ?>&nuevo=autor" class="btn btn-danger">Eliminar</a></td>
 
                                 </tr>
 

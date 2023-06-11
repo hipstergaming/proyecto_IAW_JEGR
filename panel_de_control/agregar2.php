@@ -128,6 +128,7 @@ $nuevo = $_POST['nuevo'];
                     $telefono = $_POST['telefono'];
                     $direccion = $_POST['direccion'];
                     $CIF = $_POST['CIF'];
+                    $existe = 0;
 
                     while ($fila = $resultado->fetch_assoc()) {
                         if ($fila['Nombre_ed'] == $nombre_ed) {
@@ -137,10 +138,11 @@ $nuevo = $_POST['nuevo'];
                             // echo "Se mete en existe y deja el 0";
                         }
                     }
+
                     if ($existe == 1) {
                 ?>
                         <p class="alert alert-danger">Error, esa editorial ya existe</p>
-                        <a href="index.php">Volver</a>
+                        <a href="iniciopanel.php">Volver</a>
                     <?php
 
                     } else {
@@ -167,6 +169,7 @@ $nuevo = $_POST['nuevo'];
                     $ISBN = $_POST['ISBN'];
                     $autor = $_POST['autor'];
                     $editorial = $_POST['editorial'];
+                    $existe = 0;
 
                     while ($fila = $resultado->fetch_assoc()) {
                         if ($fila['Titulo'] == $titulo) {
@@ -180,7 +183,7 @@ $nuevo = $_POST['nuevo'];
                     if ($existe == 1) {
                     ?>
                         <p class="alert alert-danger">Error, el libro ya existe</p>
-                        <a href="index.php">Volver</a>
+                        <a href="iniciopanel.php">Volver</a>
                     <?php
 
                     } else {
@@ -226,7 +229,7 @@ $nuevo = $_POST['nuevo'];
 
                     ?>
                         <p class="alert alert-danger">Error, el usuario ya existe</p>
-                        <a href="listado_usuarios_registrar.php">Volver</a>
+                        <a href="iniciopanel.php">Volver</a>
                     <?php
 
                     } else {
@@ -246,7 +249,7 @@ $nuevo = $_POST['nuevo'];
                     <!-- ###########AUTOR################# -->
                     <?php
                 } elseif ($nuevo == 'autor') {
-                    $sql1 = "Select * from usuarios";
+                    $sql1 = "Select * from autores";
                     $resultado = $mysqli->query($sql1);
                     $existe = 0;
                     $nombre=$_POST['nombre'];

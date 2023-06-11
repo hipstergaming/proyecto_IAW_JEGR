@@ -217,26 +217,25 @@ $nuevo = $_GET['nuevo'];
                     <?php
 
                 } else {
-                    while ($fila = $resultado_usuarios->fetch_assoc()) {
-                        if ($id_usuario != 1) {
-
-                            $sql = "delete from usuarios where is_usuario='$id_usuario'";
-                            $resultado = $mysqli->query($sql);
-                        } else {
+                    if ($id_usuario != "1") {
+                        $sql = "delete from usuarios where id_usuario= '$id_usuario'";
+                        $resultado = $mysqli->query($sql);
+                    } else {
                     ?>
-                            <p class="alert alert-danger" role="alert">No puedes dar de baja al administrador</p>
+                        <p class="alert alert-danger" role="alert">No puedes dar de baja al administrador</p>
 
-                    <?php
-                        }
-                    }
-                    ?>
-                    <br>
-                    <p class="alert alert-primary" role="alert">Usuario dado de baja correctamente</p>
-                    <br>
-
-                    <a href="iniciopanel.php" class='btn btn-primary'>Regresar</a>
                 <?php
+                    }
                 }
+                ?>
+                <br>
+                <p class="alert alert-primary" role="alert">Usuario dado de baja correctamente</p>
+                <br>
+
+                <a href="iniciopanel.php" class='btn btn-primary'>Regresar</a>
+                <?php
+
+
                 ?>
                 <!-- ###########AUTOR################# -->
                 <?php
@@ -282,24 +281,27 @@ $nuevo = $_GET['nuevo'];
                 $resultado_usuarios = $mysqli->query($todos_usuarios);
 
 
-                while ($fila = $resultado_usuarios->fetch_assoc()) {
-                    if ($id_usuario != 1) {
 
-                        $sql = "delete from usuarios where id_usuario='$id_usuario'";
-                        $resultado = $mysqli->query($sql);
-                    } else {
+                if ($id_usuario != 1) {
+
+                    $sql = "delete from usuarios where id_usuario='$id_usuario'";
+                    $resultado = $mysqli->query($sql);
                 ?>
-                        <p class="alert alert-danger" role="alert">No puedes dar de baja a el administrador principal</p>
+
+                    <br>
+                    <p class="alert alert-primary" role="alert">Usuario dado de baja, ¡Te extrañaremos!</p>
+                    <br>
+                    <a href="../cerradodesesion.php" class='btn btn-primary'>Regresar</a>
+                <?php
+                } else {
+                ?>
+                    <p class="alert alert-danger" role="alert">No puedes dar de baja a el administrador principal</p>
 
                 <?php
-                    }
                 }
-                ?>
-                <br>
-                <p class="alert alert-primary" role="alert">Usuario dado de baja, ¡Te extrañaremos!</p>
-                <br>
 
-                <a href="../cerradodesesion.php" class='btn btn-primary'>Regresar</a>
+                ?>
+
             <?php
             }
             ?>

@@ -22,32 +22,32 @@ $resultado = $mysqli->query($sql);
 </head>
 
 <body>
-    <?php
-    while (($fila = $resultado->fetch_assoc())) {
-        echo "Se mete al fetch <br>";
-        $hash = $fila['contraseña'];
-        echo $hash;
-        
-        if (password_verify($contraseña,$hash)){
-            $encontrado =true;
-            session_start();
-            $_SESSION["id_usu"] = $fila['id_usuario'];
-            $_SESSION["usuario"] = $usuario;
-            $_SESSION["rango"] = $fila['rango'];
+    <div class="container">
+        <?php
+        while (($fila = $resultado->fetch_assoc())) {
+            $hash = $fila['contraseña'];
+            echo $hash;
+
+            if (password_verify($contraseña, $hash)) {
+                $encontrado = true;
+                session_start();
+                $_SESSION["id_usu"] = $fila['id_usuario'];
+                $_SESSION["usuario"] = $usuario;
+                $_SESSION["rango"] = $fila['rango'];
 
 
-            header("Location:index.php");
-        } else {
-            echo "Usuario o contraseña incorrecta <br>";
-            echo '<a href="login.php">Volver al login</a>';
+                header("Location:index.php");
+            } else {
+                ?>
+                <p class="alert alert-danger">Error, usuario o contraseña incorrecta</p>
+                echo '<a href="login.php">Volver al login</a>';
+                <?php
+            }
         }
-    }
-
-    // Si no encuentra ninguna coincidencia y se acaban todos los usuarios que hay en la bdd
-    //a traves de encontrado==false agregamos el texto de error y un enlace de vuelta
 
 
-    ?>
+        ?>
+    </div>
 
 </body>
 

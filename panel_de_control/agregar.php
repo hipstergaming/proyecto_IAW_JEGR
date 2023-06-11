@@ -260,7 +260,7 @@ $nuevo = $_GET['nuevo'];
                                 <select name="rango" class="form-select" id="floatingSelect">
                                     <option selected>Selecciona el rango</option>
                                     <option value="ADMIN">ADMIN</option>
-                                    <option value="USUARIO">USUARIO</option>
+                                    <option value="CLIENTE">CLIENTE</option>
                                 </select>
                                 <label for="floatingSelect"> Rango:</label>
 

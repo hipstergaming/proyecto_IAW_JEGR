@@ -30,7 +30,7 @@ $resultado_usuarios = $mysqli->query($todos_usuarios);
 
     <script>
         function confirmacion() {
-            var respuesta = confirm("¿Estás seguro de que deseas visitar este enlace?");
+            var respuesta = confirm("¿Estás seguro de que deseas darte de baja?");
 
             if (respuesta) {
                 window.location.href = "borrar.php?id_usuario=<?php echo $id_usu ?>&nuevo=tuusuario";

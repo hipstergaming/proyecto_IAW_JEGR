@@ -335,7 +335,7 @@ $nuevo = $_GET['nuevo'];
                                             <label for="floatingInput">Nombre de autor</label>
 
                                         </div>
-                                        <input type="hidden" name="id_usuario" value="<?php echo $fila['id_autor'] ?>">
+                                        <input type="hidden" name="id_autor" value="<?php echo $fila['id_autor'] ?>">
                                         <input type="hidden" name="nuevo" value="<?php echo $nuevo ?>">
                                         <input type="submit" value="Registrar" class='btn btn-primary col-12'>
                                     <?php

@@ -20,14 +20,11 @@ if (isset($_SESSION['usuario'])) {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="estiloinicio.css">
 	<link rel="icon" href="images/Acero.ico" type="image/png">
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/jquery.dataTables.min.css">
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.dataTables.min.js"></script>
@@ -40,6 +37,14 @@ if (isset($_SESSION['usuario'])) {
 		$(document).ready(function() {
 			$('#tabla').DataTable();
 		});
+
+		function confirmacion() {
+			var respuesta = confirm("¿Estás seguro de que deseas cerrar sesion?");
+
+			if (respuesta) {
+				window.location.href = "cerradodesesion.php";
+			}
+		}
 	</script>
 
 </head>
@@ -69,7 +74,7 @@ if (isset($_SESSION['usuario'])) {
 									<a class="nav-link active" aria-current="page" href="panel_de_control/iniciopanel.php">Panel de control</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="cerradodesesion.php">Cerrar sesion</a>
+									<a onclick="confirmacion(); return false" class="nav-link active" aria-current="page" href="cerradodesesion.php">Cerrar sesion</a>
 								</li>
 							<?php
 							} else {

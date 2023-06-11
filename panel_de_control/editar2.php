@@ -132,22 +132,6 @@ $nuevo = $_POST['nuevo'];
                     $direccion = $_POST['direccion'];
                     $CIF = $_POST['CIF'];
 
-                    while ($fila = $resultado_editoriales->fetch_assoc()) {
-                        if ($fila['Nombre_ed'] == $titulo) {
-                            $existe = 1;
-                            // echo "Se mete en existe y puso 1";
-                        } else {
-                            // echo "Se mete en existe y deja el 0";
-                        }
-                    }
-                    if ($existe == 1) {
-
-                ?>
-                        <p class="alert alert-danger">Error, la editorial ya existe</p>
-                        <a href="index.php">Volver</a>
-                    <?php
-
-                    } else {
                         $sql = "update editorial set Nombre_ed='$nombre_ed', Telefono='$telefono', Direccion='$direccion', CIF='$CIF' where id_editorial='$id_editorial'";
                         $resultado = $mysqli->query($sql);
                     ?>
@@ -156,9 +140,6 @@ $nuevo = $_POST['nuevo'];
                         <br>
 
                         <a href="iniciopanel.php" class='btn btn-primary'>Regresar</a>
-                    <?php
-                    }
-                    ?>
 
                     <!-- ###########LIBRO################# -->
                     <?php
@@ -216,32 +197,20 @@ $nuevo = $_POST['nuevo'];
                     $correo = $_POST['correo'];
                     $direccion = $_POST['direccion'];
                     $telefono = $_POST['telefono'];
+                    $rango = $_POST['rango'];
 
 
                     while ($fila = $resultado_usuarios->fetch_assoc()) {
                         $contraseñadebdd = $fila['contraseña'];
-                        if ($fila['usuario'] == $titulo) {
-                            $existe = 1;
-                            // echo "Se mete en existe y puso 1";
-                        } else {
-                            // echo "Se mete en existe y deja el 0";
-                        }
                     }
-
-
-                    if ($existe == 1) {
-
                     ?>
-                        <p class="alert alert-danger">Error, el usuario ya existe</p>
-                        <a href="index.php">Volver</a>
                     <?php
 
-                    } else {
                         if ($contra == $contraseñadebdd) {
-                            $sql = "update usuarios set usuario='$usuario', correo_electronico='$correo', direccion='$direccion', telefono='$telefono' where id_usuario='$id_usu'";
+                            $sql = "update usuarios set usuario='$usuario', correo_electronico='$correo', direccion='$direccion', telefono='$telefono', rango='$rango' where id_usuario='$id_usuario'";
                             $resultado = $mysqli->query($sql);
                         } else {
-                            $sql = "update usuarios set usuario='$usuario', contraseña='$contraseña_segura', correo_electronico='$correo', direccion='$direccion', telefono='$telefono' where id_usuario='$id_usu'";
+                            $sql = "update usuarios set usuario='$usuario', contraseña='$contraseña_segura', correo_electronico='$correo', direccion='$direccion', telefono='$telefono', rango='$rango' where id_usuario='$id_usuario'";
                             $resultado = $mysqli->query($sql);
                         }
                     ?>
@@ -251,7 +220,7 @@ $nuevo = $_POST['nuevo'];
 
                         <a href="iniciopanel.php" class='btn btn-primary'>Regresar</a>
                     <?php
-                    }
+                    
                     ?>
 
 
@@ -264,22 +233,11 @@ $nuevo = $_POST['nuevo'];
                     $sql = "Select * from autores";
                     $resultado_autores = $mysqli->query($sql);
 
-                    while ($fila = $resultado_autores->fetch_assoc()) {
-                        if ($fila['Nombre'] == $titulo) {
-                            $existe = 1;
-                            // echo "Se mete en existe y puso 1";
-                        } else {
-                            // echo "Se mete en existe y deja el 0";
-                        }
-                    }
-                    if ($existe == 1) {
 
                     ?>
-                        <p class="alert alert-danger">Error, el autor ya existe</p>
-                        <a href="index.php">Volver</a>
+
                     <?php
 
-                    } else {
                         $sql = "update autores set Nombre='$nombre' where id_autor='$id_autor'";
                         $resultado = $mysqli->query($sql);
                     ?>
@@ -289,7 +247,7 @@ $nuevo = $_POST['nuevo'];
 
                         <a href="iniciopanel.php" class='btn btn-primary'>Regresar</a>
                 <?php
-                    }
+                    
                 }
                 ?>
 
