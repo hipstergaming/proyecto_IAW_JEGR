@@ -26,7 +26,7 @@ $nuevo = $_GET['nuevo'];
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="iniciopanel.php">
                         <img src="../images/Acero.ico"> Panel de control
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,16 +38,13 @@ $nuevo = $_GET['nuevo'];
                                 <?php
                                 if ($rango == "ADMIN") {
                                 ?>
-                                    <li class="nav-item">
-                                        <a href="iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
-                                    </li>
 
                                     <li class="nav-item">
                                         <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="lista_compras.php" class="nav-link active">Lista de tus compras</a>
+                                        <a href="lista_compras.php" class="nav-link active">Compras de clientes</a>
                                     </li>
 
 
@@ -87,7 +84,7 @@ $nuevo = $_GET['nuevo'];
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../index.php" class="nav-link active">Volver al index</a>
+                                        <a href="../index.php" class="nav-link active">Inicio</a>
                                     </li>
 
                                 <?php
@@ -106,7 +103,7 @@ $nuevo = $_GET['nuevo'];
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../index.php" class="nav-link active">Volver al index</a>
+                                        <a href="../index.php" class="nav-link active">Inicio</a>
                                     </li>
                                 <?php
                                 }
@@ -116,7 +113,6 @@ $nuevo = $_GET['nuevo'];
                     </div>
             </nav>
         </header>
-
         <main>
             <div class="formu">
                 <!-- ###########EDITORIAL################# -->
@@ -213,6 +209,7 @@ $nuevo = $_GET['nuevo'];
 
                                 <div class="form-floating mb-3">
                                     <select name='autor' class="form-select" id="floatingSelect">
+                                        <option selected>Selecciona el Autor</option>
                                         <?php
                                         while ($fila = $resultado1->fetch_assoc()) {
 
@@ -228,6 +225,7 @@ $nuevo = $_GET['nuevo'];
 
                                 <div class="form-floating mb-3">
                                     <select name='editorial' class="form-select" id="floatingSelect">
+                                        <option selected>Selecciona la editorial</option>
                                         <?php
                                         while ($fila = $resultado2->fetch_assoc()) {
                                             echo "<option value=", $fila['id_editorial'], ">", $fila['Nombre_ed'], "</option>";

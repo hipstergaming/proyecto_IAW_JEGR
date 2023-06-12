@@ -26,7 +26,7 @@ $nuevo = $_POST['nuevo'];
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="iniciopanel.php">
                         <img src="../images/Acero.ico"> Panel de control
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,16 +38,13 @@ $nuevo = $_POST['nuevo'];
                                 <?php
                                 if ($rango == "ADMIN") {
                                 ?>
-                                    <li class="nav-item">
-                                        <a href="iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
-                                    </li>
 
                                     <li class="nav-item">
                                         <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="lista_compras.php" class="nav-link active">Lista de tus compras</a>
+                                        <a href="lista_compras.php" class="nav-link active">Compras de clientes</a>
                                     </li>
 
 
@@ -87,7 +84,7 @@ $nuevo = $_POST['nuevo'];
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../index.php" class="nav-link active">Volver al index</a>
+                                        <a href="../index.php" class="nav-link active">Inicio</a>
                                     </li>
 
                                 <?php
@@ -106,7 +103,7 @@ $nuevo = $_POST['nuevo'];
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../index.php" class="nav-link active">Volver al index</a>
+                                        <a href="../index.php" class="nav-link active">Inicio</a>
                                     </li>
                                 <?php
                                 }
@@ -116,6 +113,7 @@ $nuevo = $_POST['nuevo'];
                     </div>
             </nav>
         </header>
+
 
         <main>
             <div class="formu">
@@ -132,14 +130,14 @@ $nuevo = $_POST['nuevo'];
                     $direccion = $_POST['direccion'];
                     $CIF = $_POST['CIF'];
 
-                        $sql = "update editorial set Nombre_ed='$nombre_ed', Telefono='$telefono', Direccion='$direccion', CIF='$CIF' where id_editorial='$id_editorial'";
-                        $resultado = $mysqli->query($sql);
-                    ?>
-                        <br>
-                        <p class="alert alert-primary" role="alert">Editorial editada correctamente</p>
-                        <br>
+                    $sql = "update editorial set Nombre_ed='$nombre_ed', Telefono='$telefono', Direccion='$direccion', CIF='$CIF' where id_editorial='$id_editorial'";
+                    $resultado = $mysqli->query($sql);
+                ?>
+                    <br>
+                    <p class="alert alert-primary" role="alert">Editorial editada correctamente</p>
+                    <br>
 
-                        <a href="iniciopanel.php" class='btn btn-primary'>Regresar</a>
+                    <a href="iniciopanel.php" class='btn btn-primary'>Regresar</a>
 
                     <!-- ###########LIBRO################# -->
                     <?php
@@ -184,7 +182,7 @@ $nuevo = $_POST['nuevo'];
                     ?>
 
                     <!-- ###########USUARIO################# -->
-                    <?php
+                <?php
                 } elseif ($nuevo == 'usuario') {
                     $id_usuario = $_POST['id_usuario'];
                     $sql = "Select * from usuarios";
@@ -203,29 +201,29 @@ $nuevo = $_POST['nuevo'];
                     while ($fila = $resultado_usuarios->fetch_assoc()) {
                         $contraseñadebdd = $fila['contraseña'];
                     }
-                    ?>
+                ?>
                     <?php
 
-                        if ($contra == $contraseñadebdd) {
-                            $sql = "update usuarios set usuario='$usuario', correo_electronico='$correo', direccion='$direccion', telefono='$telefono', rango='$rango' where id_usuario='$id_usuario'";
-                            $resultado = $mysqli->query($sql);
-                        } else {
-                            $sql = "update usuarios set usuario='$usuario', contraseña='$contraseña_segura', correo_electronico='$correo', direccion='$direccion', telefono='$telefono', rango='$rango' where id_usuario='$id_usuario'";
-                            $resultado = $mysqli->query($sql);
-                        }
+                    if ($contra == $contraseñadebdd) {
+                        $sql = "update usuarios set usuario='$usuario', correo_electronico='$correo', direccion='$direccion', telefono='$telefono', rango='$rango' where id_usuario='$id_usuario'";
+                        $resultado = $mysqli->query($sql);
+                    } else {
+                        $sql = "update usuarios set usuario='$usuario', contraseña='$contraseña_segura', correo_electronico='$correo', direccion='$direccion', telefono='$telefono', rango='$rango' where id_usuario='$id_usuario'";
+                        $resultado = $mysqli->query($sql);
+                    }
                     ?>
-                        <br>
-                        <p class="alert alert-primary" role="alert">Usuario editado correctamente </p>
-                        <br>
+                    <br>
+                    <p class="alert alert-primary" role="alert">Usuario editado correctamente </p>
+                    <br>
 
-                        <a href="iniciopanel.php" class='btn btn-primary'>Regresar</a>
+                    <a href="iniciopanel.php" class='btn btn-primary'>Regresar</a>
                     <?php
-                    
+
                     ?>
 
 
                     <!-- ###########AUTOR################# -->
-                    <?php
+                <?php
                 } elseif ($nuevo == 'autor') {
                     $id_autor = $_POST['id_autor'];
                     $nombre = $_POST['nombre'];
@@ -234,20 +232,20 @@ $nuevo = $_POST['nuevo'];
                     $resultado_autores = $mysqli->query($sql);
 
 
-                    ?>
+                ?>
 
                     <?php
 
-                        $sql = "update autores set Nombre='$nombre' where id_autor='$id_autor'";
-                        $resultado = $mysqli->query($sql);
+                    $sql = "update autores set Nombre='$nombre' where id_autor='$id_autor'";
+                    $resultado = $mysqli->query($sql);
                     ?>
-                        <br>
-                        <p class="alert alert-primary" role="alert">Autor editado correctamente </p>
-                        <br>
+                    <br>
+                    <p class="alert alert-primary" role="alert">Autor editado correctamente </p>
+                    <br>
 
-                        <a href="iniciopanel.php" class='btn btn-primary'>Regresar</a>
+                    <a href="iniciopanel.php" class='btn btn-primary'>Regresar</a>
                 <?php
-                    
+
                 }
                 ?>
 

@@ -23,11 +23,10 @@ $nuevo = $_POST['nuevo'];
 
 <body>
     <div class="container">
-
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="iniciopanel.php">
                         <img src="../images/Acero.ico"> Panel de control
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,16 +38,13 @@ $nuevo = $_POST['nuevo'];
                                 <?php
                                 if ($rango == "ADMIN") {
                                 ?>
-                                    <li class="nav-item">
-                                        <a href="iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
-                                    </li>
 
                                     <li class="nav-item">
                                         <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="lista_compras.php" class="nav-link active">Lista de tus compras</a>
+                                        <a href="lista_compras.php" class="nav-link active">Compras de clientes</a>
                                     </li>
 
 
@@ -88,7 +84,7 @@ $nuevo = $_POST['nuevo'];
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../index.php" class="nav-link active">Volver al index</a>
+                                        <a href="../index.php" class="nav-link active">Inicio</a>
                                     </li>
 
                                 <?php
@@ -107,7 +103,7 @@ $nuevo = $_POST['nuevo'];
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../index.php" class="nav-link active">Volver al index</a>
+                                        <a href="../index.php" class="nav-link active">Inicio</a>
                                     </li>
                                 <?php
                                 }
@@ -117,6 +113,7 @@ $nuevo = $_POST['nuevo'];
                     </div>
             </nav>
         </header>
+
         <main>
             <div class="formu">
                 <!-- ###########EDITORIAL################# -->
@@ -252,7 +249,7 @@ $nuevo = $_POST['nuevo'];
                     $sql1 = "Select * from autores";
                     $resultado = $mysqli->query($sql1);
                     $existe = 0;
-                    $nombre=$_POST['nombre'];
+                    $nombre = $_POST['nombre'];
 
 
                     // Compruebo si el usuario existe, si existe, da un error de alerta, si no existe, se inicia la consulta y da la alerta de bienvenida.

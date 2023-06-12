@@ -3,7 +3,7 @@ require '../conexion.php';
 session_start();
 $rango = $_SESSION['rango'];
 $id_usu = $_SESSION['id_usu'];
-$nuevo= $_GET['nuevo'];
+$nuevo = $_GET['nuevo'];
 
 
 ?>
@@ -20,25 +20,25 @@ $nuevo= $_GET['nuevo'];
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../css/jquery.dataTables.min.css">
     <script src="../js/jquery-3.4.1.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/jquery.dataTables.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
     <script>
-		$(document).ready(function() {
-			$('#tabla').DataTable();
-		});
-	</script>
+        $(document).ready(function() {
+            $('#tabla').DataTable();
+        });
+    </script>
 
 </head>
 
 
 <body>
     <div class="container">
-    <header>
+        <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="iniciopanel.php">
                         <img src="../images/Acero.ico"> Panel de control
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,16 +50,13 @@ $nuevo= $_GET['nuevo'];
                                 <?php
                                 if ($rango == "ADMIN") {
                                 ?>
-                                    <li class="nav-item">
-                                        <a href="iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
-                                    </li>
 
                                     <li class="nav-item">
                                         <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="lista_compras.php" class="nav-link active">Lista de tus compras</a>
+                                        <a href="lista_compras.php" class="nav-link active">Compras de clientes</a>
                                     </li>
 
 
@@ -71,27 +68,35 @@ $nuevo= $_GET['nuevo'];
                                             <li><a class="nav-link disabled">Usuarios</a></li>
                                             <li><a class="dropdown-item" href="listados.php?nuevo=usuario">Listado de usuarios</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=usuario">Agregar nuevo usuario</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
                                             <li><a class="nav-link disabled">Autores</a></li>
                                             <li><a class="dropdown-item" href="listados.php?nuevo=autor">Listado de autores</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=autor">Agregar nuevo autor</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
                                             <li><a class="nav-link disabled">Libros</a></li>
                                             <li><a class="dropdown-item" href="listados.php?nuevo=libro">Listado de libros</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=libro">Agregar nuevo libro</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
 
                                             <li><a class="nav-link disabled">Editorial</a></li>
                                             <li><a class="dropdown-item" href="listados.php?nuevo=editorial">Listado de editoriales</a></li>
                                             <li><a class="dropdown-item" href="agregar.php?nuevo=editorial">Registrar nueva editorial</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
                                         </ul>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../index.php" class="nav-link active">Volver al index</a>
+                                        <a href="../index.php" class="nav-link active">Inicio</a>
                                     </li>
 
                                 <?php
@@ -110,7 +115,7 @@ $nuevo= $_GET['nuevo'];
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../index.php" class="nav-link active">Volver al index</a>
+                                        <a href="../index.php" class="nav-link active">Inicio</a>
                                     </li>
                                 <?php
                                 }
@@ -120,6 +125,7 @@ $nuevo= $_GET['nuevo'];
                     </div>
             </nav>
         </header>
+
 
         <main>
             <!-- ###########EDITORIAL################# -->
@@ -170,7 +176,7 @@ $nuevo= $_GET['nuevo'];
                 <!-- ###########LIBRO################# -->
             <?php
             } elseif ($nuevo == 'libro') {
-                $sqljoin = "Select * from autores,libros, editorial where libros.id_autor=autores.id_autor and libros.id_editorial=editorial.id_editorial";
+                $sqljoin = "Select l.ISBN, l.Titulo, l.cantidad_dis, a.Nombre, e.Nombre_ed, l.id_libro from autores a,libros l, editorial e, compras c, usuarios u where l.id_autor=a.id_autor and l.id_editorial=e.id_editorial and l.id_libro=c.id_libro and u.id_usuario=c.id_usuario ";
                 $todo = $mysqli->query($sqljoin);
             ?>
                 <section>
@@ -181,8 +187,10 @@ $nuevo= $_GET['nuevo'];
                         <thead>
                             <tr>
                                 <th>Titulo</th>
-                                <th>Cantidad_disponible</th>
+                                <th>Autor</th>
+                                <th>Editorial</th>
                                 <th>ISBN</th>
+                                <th>Cantidad_disponible</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>
                             </tr>
@@ -194,8 +202,10 @@ $nuevo= $_GET['nuevo'];
 
                                 <tr>
                                     <td><?php echo $fila['Titulo'] ?></td>
-                                    <td><?php echo $fila['cantidad_dis'] ?></td>
+                                    <td><?php echo $fila['Nombre'] ?></td>
+                                    <td><?php echo $fila['Nombre_ed'] ?></td>
                                     <td><?php echo $fila['ISBN'] ?></td>
+                                    <td><?php echo $fila['cantidad_dis'] ?></td>
                                     <td><a href="editar.php?id_libro=<?php echo $fila['id_libro'] ?>&nuevo=libro" class="btn btn-primary">Editar</a></td>
                                     <td><a href="borrar.php?id_libro=<?php echo $fila['id_libro'] ?>&nuevo=libro" class="btn btn-danger">Eliminar</a></td>
 
@@ -251,7 +261,7 @@ $nuevo= $_GET['nuevo'];
             <?php
             } elseif ($nuevo == 'autor') {
                 $todos_autores = "Select * from autores";
-                $resultado_autores= $mysqli->query($todos_autores);
+                $resultado_autores = $mysqli->query($todos_autores);
             ?>
                 <section>
                     <h2>Listado de autores:</h2>

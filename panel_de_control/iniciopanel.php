@@ -30,7 +30,7 @@ $rango = $_SESSION['rango'];
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="iniciopanel.php">
                         <img src="../images/Acero.ico"> Panel de control
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,16 +42,13 @@ $rango = $_SESSION['rango'];
                                 <?php
                                 if ($rango == "ADMIN") {
                                 ?>
-                                    <li class="nav-item">
-                                        <a href="iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
-                                    </li>
 
                                     <li class="nav-item">
                                         <a href="tu_usuario.php" class="nav-link active">Tus datos</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="lista_compras.php" class="nav-link active">Lista de tus compras</a>
+                                        <a href="lista_compras.php" class="nav-link active">Compras de clientes</a>
                                     </li>
 
 
@@ -91,7 +88,7 @@ $rango = $_SESSION['rango'];
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../index.php" class="nav-link active">Volver al index</a>
+                                        <a href="../index.php" class="nav-link active">Inicio</a>
                                     </li>
 
                                 <?php
@@ -110,7 +107,7 @@ $rango = $_SESSION['rango'];
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="../index.php" class="nav-link active">Volver al index</a>
+                                        <a href="../index.php" class="nav-link active">Inicio</a>
                                     </li>
                                 <?php
                                 }
