@@ -127,25 +127,25 @@ $nuevo = $_GET['nuevo'];
                     <h1>Nueva editorial para la libreria</h1>
                     <form action="agregar2.php" method="POST" class="col" name="registro" autocomplete="off">
                         <div class="form-floating mb-3">
-                            <input type="text" name="nombre_ed" class="form-control" id="floatingInput" placeholder="">
+                            <input type="text" name="nombre_ed" class="form-control" id="floatingInput" placeholder="" required>
                             <label for="floatingInput"> Nombre</label>
 
                             <br>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="number" name="telefono" class="form-control" id="floatingInput" placeholder="">
+                            <input type="number" name="telefono" class="form-control" id="floatingInput" placeholder="" required>
                             <label for="floatingInput"> Telefono</label>
 
                             <br>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" name="direccion" class="form-control" id="floatingInput" placeholder="">
+                            <input type="text" name="direccion" class="form-control" id="floatingInput" placeholder="" required>
                             <label for="floatingInput"> Direccion</label>
 
                             <br>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" name="CIF" class="form-control" id="floatingInput" placeholder="">
+                            <input type="text" name="CIF" class="form-control" id="floatingInput" placeholder="" required>
                             <label for="floatingInput"> CIF</label>
                             <br>
                         </div>

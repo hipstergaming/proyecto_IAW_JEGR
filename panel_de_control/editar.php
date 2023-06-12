@@ -135,25 +135,25 @@ $nuevo = $_GET['nuevo'];
                         while ($fila = $resultado->fetch_assoc()) {
                         ?>
                             <div class="form-floating mb-3">
-                                <input type="text" name="nombre_ed" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Nombre_ed'] ?>">
+                                <input type="text" name="nombre_ed" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Nombre_ed'] ?>" required>
                                 <label for="floatingInput"> Nombre</label>
 
                                 <br>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" name="telefono" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Telefono'] ?>">
+                                <input type="number" name="telefono" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Telefono'] ?>" required>
                                 <label for="floatingInput"> Telefono</label>
 
                                 <br>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" name="direccion" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Direccion'] ?>">
+                                <input type="text" name="direccion" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Direccion'] ?>" required>
                                 <label for="floatingInput"> Direccion</label>
 
                                 <br>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" name="CIF" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['CIF'] ?>">
+                                <input type="text" name="CIF" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['CIF'] ?>" required>
                                 <label for="floatingInput"> CIF</label>
                                 <br>
                             </div>
@@ -192,20 +192,20 @@ $nuevo = $_GET['nuevo'];
                                 <div class="form-floating mb-3">
                                     <label for="floatingInput">Titulo</label>
                                     <br>
-                                    <input type="text" name="Titulo" size="50" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Titulo'] ?>">
+                                    <input type="text" name="Titulo" size="50" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['Titulo'] ?>" required>
                                     <br>
                                 </div>
 
                                 <div class="form-floating mb-3">
 
-                                    <input type="number" name="Cantidad_disponible" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['cantidad_dis'] ?>">
+                                    <input type="number" name="Cantidad_disponible" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['cantidad_dis'] ?>" required>
                                     <label for="floatingInput">Cantidad_disponible</label>
                                     <br>
                                 </div>
 
                                 <div class="form-floating mb-3">
 
-                                    <input type="number" name="ISBN" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['ISBN'] ?>">
+                                    <input type="number" name="ISBN" class="form-control" id="floatingInput" placeholder="" value="<?php echo $fila['ISBN'] ?>" required>
                                     <label for="floatingInput">ISBN</label>
                                     <br>
                                 </div>
