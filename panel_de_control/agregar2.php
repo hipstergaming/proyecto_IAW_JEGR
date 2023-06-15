@@ -169,7 +169,7 @@ $nuevo = $_POST['nuevo'];
                     $existe = 0;
 
                     while ($fila = $resultado->fetch_assoc()) {
-                        if ($fila['Titulo'] == $titulo) {
+                        if ($fila['ISBN'] == $ISBN) {
                             $existe = 1;
                             // echo "Se mete en existe y puso 1";
                         } else {

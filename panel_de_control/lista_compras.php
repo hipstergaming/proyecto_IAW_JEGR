@@ -178,7 +178,7 @@ $id_usu = $_SESSION['id_usu'];
                 $sqljoin = "Select u.id_usuario, u.usuario, c.id_compra, l.Titulo, c.cantidad_comprada, a.Nombre, e.Nombre_ed, c.fecha_compra from autores a,libros l, editorial e, compras c, usuarios u where l.id_autor=a.id_autor and l.id_editorial=e.id_editorial and l.id_libro=c.id_libro and u.id_usuario=c.id_usuario";
                 $todo = $mysqli->query($sqljoin);
             ?>
-                <h2>Tus compras</h2>
+                <h2>Compras de clientes</h2>
                 <br>
                 <br>
                 <section class="tablas">
