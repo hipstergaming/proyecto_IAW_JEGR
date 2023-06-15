@@ -45,7 +45,7 @@ $resultado = $mysqli->query($sql);
                 } else {
         ?>
                     <p class="alert alert-danger">Error contraseña incorrecta</p>
-                    <a href="login.php">Volver al login</a>;
+                    <a href="login.php">Volver al login</a>
             <?php
                 }
             }
