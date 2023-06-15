@@ -102,9 +102,7 @@ $nuevo = $_GET['nuevo'];
                                 <?php
                                 } else {
                                 ?>
-                                    <li class="nav-item">
-                                        <a href="iniciopanel.php" class="nav-link active" aria-current="page">Inicio</a>
-                                    </li>
+
 
                                     <li class="nav-item">
                                         <a href="tu_usuario.php" class="nav-link active">Tus datos</a>

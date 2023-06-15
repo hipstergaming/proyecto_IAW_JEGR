@@ -27,7 +27,6 @@ $resultado = $mysqli->query($sql);
         <?php
         while (($fila = $resultado->fetch_assoc())) {
             $hash = $fila['contraseña'];
-            echo $hash;
 
             if (password_verify($contraseña, $hash)) {
                 $encontrado = true;

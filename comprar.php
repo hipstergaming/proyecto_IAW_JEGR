@@ -2,8 +2,11 @@
 //    Variables
 $id_libro = $_GET['id_libro'];
 $id_usu = $_GET['id_usu'];
-
-
+session_start();
+if (isset($_SESSION['usuario'])) {
+	$id_usu = $_SESSION["id_usu"];
+	$rango= $_SESSION['rango'];
+}
 //Establezco conexion
 require 'conexion.php';
 // &contra=a
@@ -38,47 +41,58 @@ $resultado = $mysqli->query($sql);
 		.form-control {
 			width: 850px;
 		}
+
+		;
 	</style>
+	<script>
+		function confirmacion() {
+			var respuesta = confirm("¿Estás seguro de que comprar esta cantidad de libros?");
+
+			if (respuesta) {
+				window.location.href = "cerradodesesion.php";
+			}
+		}
+	</script>
 </head>
 
 <body>
 	<div class="container">
-		<header>
+	<header>
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div class="container-fluid">
 					<a class="navbar-brand" href="index.php">
-						<img src="images/Acero.ico"> Panel de control
+						<img src="images/Acero.ico"> Libreria Cosmere
 					</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<div class="d-flex justify-content-end">
-							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-								<?php
-								if (isset($_SESSION['usuario'])) {
-								?>
-									<li class="nav-item">
-										<a class="nav-link active" aria-current="page" href="panel_de_control/iniciopanel.php">Panel de control</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link active" aria-current="page" href="cerradodesesion.php">Cerrar sesion</a>
-									</li>
-								<?php
-								} else {
-								?>
-									<li class="nav-item">
-										<a class="nav-link active" aria-current="page" href="login.php">Iniciar sesion</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link active" href="registrar.php">Registrate</a>
-									</li>
-								<?php
-								}
-								?>
-						</div>
+
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<?php
+							if (isset($_SESSION['usuario'])) {
+							?>
+								<li class="nav-item">
+									<a class="nav-link active" aria-current="page" href="panel_de_control/iniciopanel.php">Panel de control</a>
+								</li>
+								<li class="nav-item">
+									<a onclick="confirmacion(); return false" class="nav-link active" aria-current="page" href="cerradodesesion.php">Cerrar sesion</a>
+								</li>
+							<?php
+							} else {
+							?>
+								<li class="nav-item">
+									<a class="nav-link active" aria-current="page" href="login.php">Iniciar sesion</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link active" href="registrar.php">Registrate</a>
+								</li>
+							<?php
+							}
+							?>
 					</div>
 				</div>
+
 			</nav>
 		</header>
 		<br><br>
@@ -106,7 +120,7 @@ $resultado = $mysqli->query($sql);
 					<!-- El envio -->
 					<div class="form-group">
 						<label>
-							<input type="submit" value="Comprar" class='btn btn-primary'>
+							<input onclick="confirmacion(); return false" type="submit" value="Comprar" class='btn btn-primary'>
 							<label>
 					</div>
 				</form>
